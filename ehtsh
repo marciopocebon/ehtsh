@@ -41,14 +41,14 @@ echo -e ""$N"Copyright (C) 2019 Entynetproject <Ivan Nikolsky>"$C""
     do
         R="\033[1;31m" # Red
         N="\033[1;37m" # White
-        G="\033[32m" # Green
-        O="\033[93m" # Orange
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-    echo -n -e "["$B"ehtools"$N"]══"$R""$WHO""$N"══["$B""$PWD""$N"]>"$C""
+    echo -n -e "["$O"ehtools"$N"]═("$R""$WHO""$N")═["$B""$PWD""$N"]>"$C""
     read -p $' ' EXEC
 
 $EXEC
