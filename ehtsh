@@ -37,18 +37,28 @@
 
 echo -e ""$N"Ehtools Shell - simple ehtools shell."$C""
 echo -e ""$N"Copyright (C) 2019 Entynetproject <Ivan Nikolsky>"$C""
-while true
-do
-R="\033[1;31m" # Red
-N="\033[1;37m" # White
-G="\033[32m" # Green
-O="\033[0;33m" # Orange
-B="\033[1;34m" #Blue
-C="\033[0m" #End
-WHO="$( whoami )"
-PWD="$( pwd )"
+    while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[32m" # Green
+        O="\033[0;33m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            PWD="$( pwd )"
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-echo -n -e ""$R""$WHO"@ehtools"$N":"$B""$PWD""$N"#"$C""
-read -p $' ' EXEC
+    echo -n -e ""$R""$WHO"@ehtools"$N":"$B""$PWD""$N"#"$C""
+    read -p $' ' EXEC
+
 $EXEC
-done
+        
+        if [[ -d /eht ]]
+        then    
+            echo "$EXEC" >> /eht/.ehtsh_history
+        else
+            mkdir /eht
+            echo "$EXEC" >> /eht/.ehtsh_history
+        fi
+    
+    done
