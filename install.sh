@@ -27,8 +27,4 @@ cp ehtsh /bin
 chmod +x /bin/ehtsh
 cp ehtsh /usr/local/bin
 chmod +x /usr/local/bin/ehtsh
-cp ehtrc /bin
-chmod +x /bin/ehtrc
-cp ehtrc /usr/local/bin
-chmod +x /usr/local/bin/ehtrc
 } &> /dev/null
