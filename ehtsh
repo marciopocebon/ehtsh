@@ -38,7 +38,13 @@ printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e ""$R""$WHO"@ehtools"$N":"$B""$PWD""$N"#"$C""
     read -p $' ' EXEC
 
-$EXEC
+if [[ "$EXEC" = "cd ~" ]]
+then
+    cd
+else
+    "$EXEC"
+fi
+
         
         if [[ -d /eht ]]
         then    
