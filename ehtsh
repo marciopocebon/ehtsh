@@ -37,7 +37,7 @@ PWD="$( pwd )"
           THEME="as system:"
       elif [[ "$2" = "eterm" ]]
       then
-          THEME="\033[34meterm##$:BKUW300PS345672:\033[0m"
+          THEME="\033[34meterm##$:"$WHO":\033[0m"
       elif [[ "$2" = "root" ]]
       then
           THEME="\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
@@ -52,7 +52,7 @@ PWD="$( pwd )"
           THEME="DOS_fat:"
       elif [[ "$2" = "c_disk" ]]
       then
-          THEME="C:\>"
+          THEME="C:\"$WHO">"
       elif [[ "$2" = "--list" ]]
       then
       echo -e "\033[1;37mehtsh  \033[0m) \033[1;37mehtsh theme\033[0m"
