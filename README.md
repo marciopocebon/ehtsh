@@ -1,5 +1,13 @@
 # ehtools-shell (ehtsh)
 
+# How to install ehtsh
+
+> cd ehtools-shell
+
+> chmod +x install.sh
+
+> ./install.sh
+
 # Ehtools shell options
 
 | Command | Description |
@@ -19,3 +27,20 @@
 | parrot | parrot os theme |
 | dos_fat | dos cmd theme |
 | c_disk | windows cmd theme |
+
+# How to change theme
+
+> ehtsh --theme --list
+
+    INFO: Select theme, for example "dos_fat"
+
+> ehtsh --theme dos_fat
+
+    DOS_fat: cd /root/examples
+    DOS_fat: ls 
+    Desktop Videos Media 
+    DOS_fat: exit
+    [exit 0]
+    
+ # Thats all!
+    
