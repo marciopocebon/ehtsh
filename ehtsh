@@ -101,7 +101,7 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+printf '\033]2;'eterm ~> '$PWD'\a'
     echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
     read -p $' ' EXEC
 $EXEC
@@ -131,7 +131,7 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+printf '\033]2;user:root in '$PWD'\a'
     echo -n -e "\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
     read -p $' ' EXEC
 $EXEC
@@ -161,7 +161,7 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+printf '\033]2;'$WHO'@kali:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
     read -p $' ' EXEC
 $EXEC
@@ -191,7 +191,7 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+printf '\033]2;'$PWD'\a'
     echo -n -e "\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
     read -p $' ' EXEC
 $EXEC
@@ -251,7 +251,7 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;C:\'$PWD'>\a'
+printf '\033]2;C:\'$PWD'\a'
     echo -n -e "C:\'$PWD'>"
     read -p $' ' EXEC
 $EXEC
@@ -268,8 +268,37 @@ $EXEC
         fi
     
     done
-
-        elif [[ "$2" = "--list" ]]
+elif [[ "$2" = "alpine" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            PWD="$( pwd )"
+printf '\033]2;alpine('$PWD')\a'
+    echo -n -e ""$R"alpine"$N"("$R""$PWD""$N")"$B" ~"$R">"$C""
+    read -p $' ' EXEC
+$EXEC
+        if [[ -d /eht ]]
+        then    
+            {
+            echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            mkdir /eht
+            echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+        
+      elif [[ "$2" = "--list" ]]
       then
       echo -e "\033[1;37mehtsh  \033[0m| \033[1;37mehtsh theme\033[0m"
       echo -e "\033[1;37msystem \033[0m| \033[1;37msystem theme\033[0m"
@@ -279,6 +308,7 @@ $EXEC
       echo -e "\033[1;37mparrot \033[0m| \033[1;37mparrot theme\033[0m"
       echo -e "\033[1;37mdos_fat\033[0m| \033[1;37mDOS_fat theme\033[0m"
       echo -e "\033[1;37mc_disk \033[0m| \033[1;37mC_disk theme\033[0m"
+      echo -e "\033[1;37alpine  \033[0m| \033[1;37malpine theme theme\033[0m"
       fi
      
 else
