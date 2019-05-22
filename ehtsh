@@ -29,62 +29,41 @@ WHO="$( whoami )"
 PWD="$( pwd )"
   if [[ "$1" = "--theme" ]]
   then
-      if [[ "$2" = "--ehtsh" ]]
-      then
-      if [[ "$3" = "default" ]]
+      if [[ "$2" = "ehtsh" ]]
       then
           THEME="\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
-      elif [[ "$3" = "system" ]]
+      elif [[ "$2" = "system" ]]
       then
           THEME="as system:"
-      elif [[ "$3" = "eterm" ]]
+      elif [[ "$2" = "eterm" ]]
       then
           THEME="\033[34meterm##$:BKUW300PS345672:\033[0m"
-      elif [[ "$3" = "root" ]]
+      elif [[ "$2" = "root" ]]
       then
           THEME="\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
-      elif [[ "$3" = "kali" ]]
+      elif [[ "$2" = "kali" ]]
       then
           THEME="\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
-      elif [[ "$3" = "parrot" ]]
+      elif [[ "$2" = "parrot" ]]
       then
           THEME="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
-      elif [[ "$1" = "dos_format" ]]
+      elif [[ "$2" = "dos_fat" ]]
       then
-          THEME="DOS_format:"
-      elif [[ "$1" = "C_disk" ]]
+          THEME="DOS_fat:"
+      elif [[ "$2" = "c_disk" ]]
       then
           THEME="C:\>"
+      elif [[ "$2" = "--list" ]]
+      then
+      echo -e "\033[1;37mehtsh  \033[0m) \033[1;37mehtsh theme\033[0m"
+      echo -e "\033[1;37msystem \033[0m) \033[1;37msystem theme\033[0m"
+      echo -e "\033[1;37meterm  \033[0m) \033[1;37meterm theme\033[0m"
+      echo -e "\033[1;37mroot   \033[0m) \033[1;37mroot theme\033[0m"
+      echo -e "\033[1;37mkali   \033[0m) \033[1;37mkali theme\033[0m"
+      echo -e "\033[1;37mparrot \033[0m) \033[1;37mparrot theme\033[0m"
+      echo -e "\033[1;37mdos_fat\033[0m) \033[1;37mDOS_fat theme\033[0m"
+      echo -e "\033[1;37mc_disk \033[0m) \033[1;37mC_disk theme\033[0m"
       fi
-fi
-    if [[ "$2" = "--bash" ]]
-    then
-    if [[ "$3" = "default" ]]
-      then
-          PS1="\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m "
-      elif [[ "$3" = "system" ]]
-      then
-          PS1="as system: "
-      elif [[ "$3" = "eterm" ]]
-      then
-          PS1="\033[34meterm##$:BKUW300PS345672:\033[0m "
-      elif [[ "$3" = "root" ]]
-      then
-          PS1="\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m "
-      elif [[ "$3" = "kali" ]]
-      then
-          PS1="\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m "
-      elif [[ "$3" = "parrot" ]]
-      then
-          PS1="\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
-      elif [[ "$1" = "dos_format" ]]
-      then
-          PS1="DOS_format: "
-      elif [[ "$1" = "C_disk" ]]
-      then
-          PS1="C:\> "
-    fi
-fi
 else
 THEME="\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
 fi
