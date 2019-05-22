@@ -101,7 +101,7 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'eterm ~> '$PWD'\a'
+printf '\033]2;eterm ~> '$PWD'\a'
     echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
     read -p $' ' EXEC
 $EXEC
