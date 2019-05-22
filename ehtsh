@@ -42,10 +42,14 @@ $EXEC
         
         if [[ -d /eht ]]
         then    
+            {
             echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
         else
+            {
             mkdir /eht
             echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
         fi
     
     done
