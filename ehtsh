@@ -52,17 +52,7 @@ PWD="$( pwd )"
           THEME="DOS_fat:"
       elif [[ "$2" = "c_disk" ]]
       then
-          THEME="C:\"$WHO">""
-      elif [[ "$2" = "--list" ]]
-      then
-      echo -e ""\033[1;37m"ehtsh  "\033[0m"| "\033[1;37m"ehtsh theme"\033[0m""
-      echo -e ""\033[1;37m"system "\033[0m"| "\033[1;37m"system theme"\033[0m""
-      echo -e ""\033[1;37m"eterm  "\033[0m"| "\033[1;37m"eterm theme"\033[0m""
-      echo -e ""\033[1;37m"root   "\033[0m"| "\033[1;37m"root theme"\033[0m""
-      echo -e ""\033[1;37m"kali   "\033[0m"| "\033[1;37m"kali theme"\033[0m""
-      echo -e ""\033[1;37m"parrot "\033[0m"| "\033[1;37m"parrot theme"\033[0m""
-      echo -e ""\033[1;37m"dos_fat"\033[0m"| "\033[1;37m"DOS_fat theme"\033[0m""
-      echo -e ""\033[1;37m"c_disk "\033[0m"| "\033[1;37m"C_disk theme"\033[0m""
+          THEME="C:\>"
       fi
      
 else
