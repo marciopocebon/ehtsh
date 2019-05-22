@@ -90,7 +90,7 @@ fi
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e "$THEME"
     read -p $' ' EXEC
-"$EXEC" $1 $2 $3 $4 $5 $6 $7 $8 $9
+$EXEC
         if [[ -d /eht ]]
         then    
             {
