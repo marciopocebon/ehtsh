@@ -102,7 +102,7 @@ $EXEC
             WHO="$( whoami )"
             PWD="$( pwd )"
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-    echo -n -e "\033[34meterm##$:"$WHO":\033[0m"
+    echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
     read -p $' ' EXEC
 $EXEC
         if [[ -d /eht ]]
@@ -221,8 +221,8 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-    echo -n -e "DOS_fat:"
+printf '\033]2;DOS_fat ~> '$PWD'\a'
+    echo -n -e "DOS_fat ~> "$PWD":"
     read -p $' ' EXEC
 $EXEC
         if [[ -d /eht ]]
@@ -251,8 +251,8 @@ $EXEC
         C="\033[0m" #End
             WHO="$( whoami )"
             PWD="$( pwd )"
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-    echo -n -e "C:\>"
+printf '\033]2;C:\'$PWD'>\a'
+    echo -n -e "C:\'$PWD'>"
     read -p $' ' EXEC
 $EXEC
         if [[ -d /eht ]]
