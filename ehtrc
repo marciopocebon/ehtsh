@@ -46,7 +46,7 @@ PWD="$( pwd )"
       elif [[ "$1" = "7" ]]
       then
           PS1="DOS_format: "
-      elif [[ "$1" = "8" ]]
+      elif [[ "$0" = "8" ]]
       then
           PS1="C:\> "
       elif [[ "$1" = "--list" ]]
