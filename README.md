@@ -8,6 +8,12 @@
      #+#        #+#    #+#     #+#    #+#    #+# #+#    #+#      
     ########## ###    ###     ###     ########  ###    ###       
     
+# About ehtools shell
+
+    INFO: Ehtools Shell is a simple ehtools shell
+    with different functions and themes for comfortable
+    working in your unix terminal!
+
 # How to install ehtsh
 
 > cd ehtools-shell
