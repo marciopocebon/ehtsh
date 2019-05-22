@@ -22,8 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-echo -e ""$N"Ehtools Shell - simple ehtools shell."$C""
-echo -e ""$N"Copyright (C) 2019 Entynetproject <Ivan Nikolsky>"$C""
+echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
+echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
   
 WHO="$( whoami )"
 PWD="$( pwd )"
