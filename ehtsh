@@ -52,7 +52,7 @@ PWD="$( pwd )"
           THEME="DOS_fat:"
       elif [[ "$2" = "c_disk" ]]
       then
-          THEME="C:\"$WHO">"
+          THEME="C:\"$WHO">""
       fi
 else
 THEME="\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
