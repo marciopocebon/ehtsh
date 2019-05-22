@@ -49,6 +49,7 @@
 | parrot | parrot os theme |
 | dos_fat | dos cmd theme |
 | c_disk | windows cmd theme |
+| alpine | alpine MacOS theme |
 
 # How to change theme
 
