@@ -35,7 +35,7 @@ echo -e ""$N"Copyright (C) 2019 Entynetproject <Ivan Nikolsky>"$C""
             WHO="$( whoami )"
             PWD="$( pwd )"
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-    echo -n -e "["$O"ehtools"$N"]═("$R""$WHO""$N")═["$B""$PWD""$N"]>"$C""
+    echo -n -e ""$R""$WHO"@ehtools"$N":"$B""$PWD""$N"#"$C""
     read -p $' ' EXEC
 
 $EXEC
