@@ -1,5 +1,17 @@
 # ehtools-shell (ehtsh)
 
+    root@ehtools:/var# ehtsh --theme eterm
+    eterm##$:/var: ls
+    readme.txt
+    eterm##$:/var: cat readme.txt
+    cat: readme.txt: permission denied!
+    eterm##$:/var: more readme.txt
+    --------------------
+       LEAVE ME HERE!
+    --------------------
+    eterm##$:/var: rm readme.txt
+    rm: readme.txt: [y/N]
+    
 # How to install ehtsh
 
 > cd ehtools-shell
@@ -7,6 +19,14 @@
 > chmod +x install.sh
 
 > ./install.sh
+
+# How to uninstall ehtsh
+
+> cd ehtools-shell
+
+> chmod +x uninstall.sh
+
+> ./uninstall.sh
 
 # Ehtools shell options
 
