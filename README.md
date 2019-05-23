@@ -28,7 +28,7 @@
       <img src="https://img.shields.io/badge/wiki%20-ehtsh-lightgrey.svg">
  </a>
   <a href="https://mobile.twitter.com/ehtools">
-    <img src="https://img.shields.io/badge/twitter-ehtools-green.svg">
+    <img src="https://img.shields.io/badge/twitter-ehtools-blue.svg">
  </a>
 </p>
 
