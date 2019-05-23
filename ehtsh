@@ -252,7 +252,7 @@ $EXEC
             WHO="$( whoami )"
             PWD="$( pwd )"
 printf '\033]2;C:\'$PWD'\a'
-    echo -n -e "C:\$PWD>"
+    echo -n -e "C:\'$PWD'>"
     read -p $' ' EXEC
 $EXEC
         if [[ -d /eht ]]
@@ -281,7 +281,7 @@ elif [[ "$2" = "alpine" ]]
             WHO="$( whoami )"
             PWD="$( pwd )"
 printf '\033]2;alpine('$PWD')\a'
-    echo -n -e ""$R"alpine"$N"(\033[4;31m"$PWD""$N")"$B" ~"$R">"$C""
+    echo -n -e ""$R"alpine"$N"(\033[4;31m"$PWD""$C""$N")"$B" ~"$R">"$C""
     read -p $' ' EXEC
 $EXEC
         if [[ -d /eht ]]
