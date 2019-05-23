@@ -69,24 +69,24 @@
 | system | "as system" theme for old computers |
 | eterm | eterm default theme |
 | root | fake root user theme |
-| kali | kali linux theme |
+| kali | Kali Linux theme |
 | parrot | parrot os theme |
-| dos_fat | dos cmd theme |
-| c_disk | windows cmd theme |
+| dos_fat | DOS cmd theme |
+| c_disk | Windows cmd theme |
 | alpine | alpine MacOS theme |
 
 # How to change theme
 
 > ehtsh --theme --list
 
-    INFO: Select theme, for example "dos_fat"
+    INFO: Select theme, for example "alpine"
 
-> ehtsh --theme dos_fat
+> ehtsh --theme alpine
 
-    DOS_fat: cd /root/examples
-    DOS_fat: ls 
+    alpine(/) ~> cd /root/examples
+    alpine(/root/examples) ~> ls 
     Desktop Videos Media 
-    DOS_fat: exit
+    alpine(/root/examples) ~> exit
     [exit 0]
     
  # Ehtsh MIT license
