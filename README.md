@@ -93,9 +93,9 @@
  
 | Issue | Description | Status |
 | --- | --- | --- |
-| ctrl+c | ehtsh closed after ctrl+c | FIXED |
-| ls | no colors in ls output | ACTIVE |
-| cd ~ | ehtsh can not change directory to ~ | ACTIVE |
+| ctrl+c | ehtsh closed after ctrl+c | Fixed! |
+| ls | no colors in ls output | Fixed! |
+| cd ~ | ehtsh can not change directory to ~ | Active! |
  
  # Ehtsh MIT license
  
