@@ -97,14 +97,6 @@
     ls -G for it!
     
 > ls -G
-
-# Known issues
- 
-| Issue | Description | Status |
-| --- | --- | --- |
-| ctrl+c | ehtsh closed after ctrl+c | Fixed! |
-| ls | no colors in ls output | Fixed! |
-| cd ~ | ehtsh can not change directory to ~ | Active! |
  
 # Ehtsh MIT license
  
