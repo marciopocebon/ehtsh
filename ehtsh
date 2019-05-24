@@ -46,7 +46,12 @@ trap '' 2
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
     read -p $' ' EXEC
+if [[ "$EXEC" = "ls" ]]
+then
+ls -G $2
+else
 $EXEC
+fi
         if [[ -d /eht ]]
         then    
             {
