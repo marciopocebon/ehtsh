@@ -51,7 +51,12 @@ if [[ "$EXEC" = "ls" ]]
 then
 ls -G
 else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -89,7 +94,12 @@ if [[ "$EXEC" = "ls" ]]
 then
 ls -G
 else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -127,7 +137,12 @@ if [[ "$EXEC" = "ls" ]]
 then
 ls -G
 else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -163,9 +178,14 @@ printf '\033]2;user:root in '$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G 
+ls -G
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
 else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -201,9 +221,14 @@ printf '\033]2;'$WHO'@kali:'$PWD'#\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G 
+ls -G
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
 else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -239,9 +264,14 @@ printf '\033]2;'$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G 
+ls -G
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
 else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -277,9 +307,14 @@ printf '\033]2;DOS_fat ~> '$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G 
+ls -G
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
 else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -315,9 +350,14 @@ printf '\033]2;C:\'$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G 
+ls -G
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
 else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -352,9 +392,14 @@ printf '\033]2;alpine('$PWD')\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G 
+ls -G
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
 else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
@@ -406,7 +451,12 @@ if [[ "$EXEC" = "ls" ]]
 then
 ls -G
 else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
 $EXEC
+fi
 fi
         if [[ -d /eht ]]
         then    
