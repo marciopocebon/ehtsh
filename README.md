@@ -89,6 +89,14 @@
     alpine(/root/examples) ~> exit
     [exit 0]
     
+ # Known issues
+ 
+| Issue | Description |
+| --- | --- |
+| ^C | ehtsh closed after ctrl+c |
+| ls | no colors in ls output |
+| cd ~ | ehtsh can not change directory to ~ |
+ 
  # Ehtsh MIT license
  
     MIT License
