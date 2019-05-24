@@ -49,7 +49,7 @@ printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G
 else
 $EXEC
 fi
@@ -87,7 +87,7 @@ printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G
 else
 $EXEC
 fi
@@ -125,7 +125,7 @@ printf '\033]2;eterm ~> '$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G
 else
 $EXEC
 fi
@@ -163,7 +163,7 @@ printf '\033]2;user:root in '$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G 
 else
 $EXEC
 fi
@@ -201,7 +201,7 @@ printf '\033]2;'$WHO'@kali:'$PWD'#\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G 
 else
 $EXEC
 fi
@@ -239,7 +239,7 @@ printf '\033]2;'$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G 
 else
 $EXEC
 fi
@@ -277,7 +277,7 @@ printf '\033]2;DOS_fat ~> '$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G 
 else
 $EXEC
 fi
@@ -315,7 +315,7 @@ printf '\033]2;C:\'$PWD'\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G 
 else
 $EXEC
 fi
@@ -352,7 +352,7 @@ printf '\033]2;alpine('$PWD')\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G 
 else
 $EXEC
 fi
@@ -404,7 +404,7 @@ printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
 
 if [[ "$EXEC" = "ls" ]]
 then
-ls -G $2
+ls -G
 else
 $EXEC
 fi
