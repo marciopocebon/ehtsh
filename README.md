@@ -91,12 +91,23 @@
     
 # Ehtools shell ls
 
+> # In MacOS Linux
+    
     INFO: There is a problem with ls utility in ehtsh,
     no colorized output! But we fixed it, now if you
     want to view colorized ls output from ehtsh use
     ls -G for it!
     
 > ls -G
+
+> # In Other Linux
+
+    INFO: There is a problem with ls utility in ehtsh,
+    no colorized output! But we fixed it, now if you
+    want to view colorized ls output from ehtsh use
+    ls --color for it!
+    
+> ls --color
  
 # Ehtsh MIT license
  
