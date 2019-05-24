@@ -300,15 +300,17 @@ $EXEC
         
       elif [[ "$2" = "--list" ]]
       then
-      echo -e "\033[1;37mehtsh  \033[0m| \033[1;37mehtsh theme\033[0m"
-      echo -e "\033[1;37msystem \033[0m| \033[1;37msystem theme\033[0m"
-      echo -e "\033[1;37meterm  \033[0m| \033[1;37meterm theme\033[0m"
-      echo -e "\033[1;37mroot   \033[0m| \033[1;37mroot theme\033[0m"
-      echo -e "\033[1;37mkali   \033[0m| \033[1;37mkali theme\033[0m"
-      echo -e "\033[1;37mparrot \033[0m| \033[1;37mparrot theme\033[0m"
-      echo -e "\033[1;37mdos_fat\033[0m| \033[1;37mDOS_fat theme\033[0m"
-      echo -e "\033[1;37mc_disk \033[0m| \033[1;37mC_disk theme\033[0m"
-      echo -e "\033[1;37alpine  \033[0m| \033[1;37malpine theme theme\033[0m"
+      echo -e
+      echo -e "\033[1;37m    ehtsh   \033[0m| \033[1;37mehtsh theme\033[0m"
+      echo -e "\033[1;37m    system  \033[0m| \033[1;37msystem theme\033[0m"
+      echo -e "\033[1;37m    eterm   \033[0m| \033[1;37meterm theme\033[0m"
+      echo -e "\033[1;37m    root    \033[0m| \033[1;37mroot theme\033[0m"
+      echo -e "\033[1;37m    kali    \033[0m| \033[1;37mkali theme\033[0m"
+      echo -e "\033[1;37m    parrot  \033[0m| \033[1;37mparrot theme\033[0m"
+      echo -e "\033[1;37m    dos_fat \033[0m| \033[1;37mDOS_fat theme\033[0m"
+      echo -e "\033[1;37m    c_disk  \033[0m| \033[1;37mC_disk theme\033[0m"
+      echo -e "\033[1;37m    alpine  \033[0m| \033[1;37malpine theme theme\033[0m"
+      echo -e
       fi
      
 else
