@@ -89,7 +89,16 @@
     alpine(/root/examples) ~> exit
     [exit 0]
     
- # Known issues
+# Command ls
+
+    INFO: There is a problem with ls utility in ehtsh,
+    no colorized output! But we fixed it, now if you
+    want to view colorized ls output from ehtsh use
+    ls -G for it!
+    
+> ls -G
+
+# Known issues
  
 | Issue | Description | Status |
 | --- | --- | --- |
@@ -97,7 +106,7 @@
 | ls | no colors in ls output | Fixed! |
 | cd ~ | ehtsh can not change directory to ~ | Active! |
  
- # Ehtsh MIT license
+# Ehtsh MIT license
  
     MIT License
 
