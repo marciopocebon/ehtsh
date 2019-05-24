@@ -91,7 +91,7 @@
     
 # Ehtools shell ls
 
-> # In MacOS Linux
+> # MacOS Linux
     
     INFO: There is a problem with ls utility in ehtsh,
     no colorized output! But we fixed it, now if you
@@ -100,7 +100,7 @@
     
 > ls -G
 
-> # In Other Linux
+> # Other Linux
 
     INFO: There is a problem with ls utility in ehtsh,
     no colorized output! But we fixed it, now if you
