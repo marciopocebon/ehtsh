@@ -89,7 +89,7 @@
     alpine(/root/examples) ~> exit
     [exit 0]
     
-# Command ls
+# Ehtsh ls documentation
 
     INFO: There is a problem with ls utility in ehtsh,
     no colorized output! But we fixed it, now if you
