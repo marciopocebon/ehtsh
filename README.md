@@ -91,11 +91,11 @@
     
  # Known issues
  
-| Issue | Description |
-| --- | --- |
-| ctrl+c | ehtsh closed after ctrl+c |
-| ls | no colors in ls output |
-| cd ~ | ehtsh can not change directory to ~ |
+| Issue | Description | Status |
+| --- | --- | --- |
+| ctrl+c | ehtsh closed after ctrl+c | FIXED |
+| ls | no colors in ls output | ACTIVE |
+| cd ~ | ehtsh can not change directory to ~ | ACTIVE |
  
  # Ehtsh MIT license
  
