@@ -93,7 +93,7 @@
  
 | Issue | Description |
 | --- | --- |
-| ^C | ehtsh closed after ctrl+c |
+| ctrl+c | ehtsh closed after ctrl+c |
 | ls | no colors in ls output |
 | cd ~ | ehtsh can not change directory to ~ |
  
