@@ -24,6 +24,7 @@
 
 if [[ "$1" = "--update" ]]
 then
+echo -e "\033[1;34mInstalling update...\033[0m"
 {
 cd
 rm -r ehtools-shell
@@ -35,6 +36,7 @@ chmod +x install.sh
 ./install.sh
 } &> /dev/null
 fi
+echo -e "\033[1;32mSuccessfully installed..."
 
 echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
 echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
