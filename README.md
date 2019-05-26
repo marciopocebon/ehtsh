@@ -60,7 +60,8 @@
 | --- | --- |
 | ehtsh --theme | Select terminal theme |
 | ehtsh --theme --list | Show all terminal themes |
-
+| ehtsh --update | Update ehtools shell |
+| ehtsh --check-if-root | Check if root user |
 # Ehtools shell themes
 
 | Theme | Description |
