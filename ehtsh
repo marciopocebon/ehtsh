@@ -35,8 +35,20 @@ cd ehtools-shell
 chmod +x install.sh
 ./install.sh
 } &> /dev/null
+echo -e "\033[1;32mSuccessfully updated..."
+sleep 1
+exit
+
+elif [[ "$1" = "--check-if-root" ]]
+then
+WHO="$( whoami )"
+if [[ "$WHO" = "root" ]]
+then
+echo -e ""
+else
+echo -e ""
 fi
-echo -e "\033[1;32mSuccessfully installed..."
+fi
 
 echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
 echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
