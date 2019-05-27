@@ -50,6 +50,7 @@ then
         O="\033[1;93m" # Orange
         B="\033[1;34m" #Blue
         C="\033[0m" #End
+sleep 3
 echo -e ""$N"["$G"✔"$N"] "$G"Congratulations, you are a root!"$C""
 sleep 1 
 exit
@@ -60,6 +61,7 @@ else
         O="\033[1;93m" # Orange
         B="\033[1;34m" #Blue
         C="\033[0m" #End
+sleep 3
 echo -e ""$N"["$R"✗"$N"] "$R"Sorry, you are not a root!"$C""
 sleep 1
 exit
@@ -232,7 +234,12 @@ fi
 trap '' INT TSTP
 trap '' 2
 printf '\033]2;user:root in '$PWD'\a'
-    echo -n -e "\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
+    if [[ "$WHO" = "root" ]]
+    then
+    echo -n -e ""$N"["$G"✔"$N"]-\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
+    else
+    echo -n -e ""$N"["$R"✗"$N"]-\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
+    fi
     read -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
@@ -532,8 +539,8 @@ else
             PWD="$( pwd )"
 trap '' INT TSTP
 trap '' 2
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
-    echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
+printf '\033]2;ehtsh\a'
+    echo -n -e "ehtsh-1.0$"
     read -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
