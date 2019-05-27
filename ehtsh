@@ -540,7 +540,7 @@ else
 trap '' INT TSTP
 trap '' 2
 printf '\033]2;ehtsh\a'
-    echo -n -e "ehtsh-1.0$"
+    echo -n -e "ehtsh-1.3$"
     read -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
