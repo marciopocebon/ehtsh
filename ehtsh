@@ -540,7 +540,12 @@ else
 trap '' INT TSTP
 trap '' 2
 printf '\033]2;ehtsh\a'
+    if [[ "$WHO" = "root" ]]
+    then
+    echo -n -e "ehtsh-1.3#"
+    else
     echo -n -e "ehtsh-1.3$"
+    fi
     read -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
