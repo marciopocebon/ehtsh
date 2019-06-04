@@ -47,7 +47,6 @@ then
       echo -e "\033[1;37m    -c  --check-if-root \033[0m| \033[1;37mCheck if root user.\033[0m"
       echo -e "\033[1;37m    -h  --help          \033[0m| \033[1;37mGive this help list.\033[0m"
       echo -e
-      fi
 
 elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
 then
