@@ -521,7 +521,7 @@ fi
     
     done
         
-      elif [[ "$2" = "--list" ]]
+      elif [[ "$2" = "--list" || "$2" = "-l" ]]
       then
       echo -e
       echo -e "\033[1;37m    ehtsh   \033[0m| \033[1;37mehtsh theme\033[0m"
