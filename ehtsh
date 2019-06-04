@@ -41,12 +41,15 @@ exit
 
 elif [[ "$1" = "--help" || "$1" = "-h" ]]
 then
+      echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
+      echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
       echo -e
       echo -e "\033[1;37m    -t  --theme <theme> \033[0m| \033[1;37mChange ehtsh theme.\033[0m"
       echo -e "\033[1;37m    -u  --update        \033[0m| \033[1;37mUpdate ehtools shell.\033[0m"
       echo -e "\033[1;37m    -c  --check-if-root \033[0m| \033[1;37mCheck if root user.\033[0m"
       echo -e "\033[1;37m    -h  --help          \033[0m| \033[1;37mGive this help list.\033[0m"
       echo -e
+      exit
 
 elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
 then
