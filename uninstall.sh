@@ -23,6 +23,7 @@
 # SOFTWARE.
 
 {
+rm -r ~/ehtools-shell
 rm /bin/ehtsh
 rm /usr/local/bin/ehtsh
 } &> /dev/null
