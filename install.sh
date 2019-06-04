@@ -22,9 +22,26 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+if [[ -d ~/ehtools-shell ]]
+then
+cd ~/ehtools-shell
 {
 cp ehtsh /bin
-chmod +x /bin/ehtsh
 cp ehtsh /usr/local/bin
+chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
 } &> /dev/null
+cd ~/ehtools-shell
+else
+cd ~
+git clone https://github.com/entynetproject/ehtools-shell.git
+cd ~/ehtools-shell
+cd ~/ehtools-shell
+{
+cp ehtsh /bin
+cp ehtsh /usr/local/bin
+chmod +x /bin/ehtsh
+chmod +x /usr/local/bin/ehtsh
+} &> /dev/null
+cd ~/ehtools-shell
+fi
