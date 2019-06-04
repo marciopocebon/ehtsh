@@ -70,15 +70,15 @@
 
 | Theme | Description |
 | --- | --- |
-| ehtsh | ehtsh default theme |
-| system | "as system" theme for old computers |
-| eterm | eterm default theme |
-| root | fake root user theme |
+| ehtsh | The ehtsh default theme |
+| system | Old terminal theme |
+| eterm | Elliot terminal theme |
+| root | Fake root user theme |
 | kali | Kali Linux theme |
-| parrot | parrot os theme |
+| parrot | Parrot OS theme |
 | dos_fat | DOS cmd theme |
 | c_disk | Windows cmd theme |
-| alpine | alpine MacOS theme |
+| alpine | MacOS alpine theme |
 
 # How to change theme
 
