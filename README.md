@@ -56,12 +56,14 @@
 
 # Ehtools shell options
 
-| Command | Description |
-| --- | --- |
-| ehtsh --theme | Select terminal theme |
-| ehtsh --theme --list | Show all terminal themes |
-| ehtsh --update | Update ehtools shell |
-| ehtsh --check-if-root | Check if root user |
+| Shortcut | Command | Description |
+| --- | --- | --- |
+| -t | ehtsh --theme | Select terminal theme |
+| -t -l |ehtsh --theme --list | Show all terminal themes |
+| -u | ehtsh --update | Update ehtools shell |
+| -c | ehtsh --check-if-root | Check if root user |
+| -h | ehtsh --help | Show ehtsh options |
+
 # Ehtools shell themes
 
 | Theme | Description |
