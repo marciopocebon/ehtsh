@@ -36,7 +36,6 @@ else
 cd ~
 git clone https://github.com/entynetproject/ehtools-shell.git
 cd ~/ehtools-shell
-cd ~/ehtools-shell
 {
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
