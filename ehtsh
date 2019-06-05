@@ -44,10 +44,10 @@ then
       echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
       echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
       echo -e
-      echo -e "\033[1;37m    -t  --theme <theme> \033[0m| \033[1;37mChange ehtsh theme.\033[0m"
-      echo -e "\033[1;37m    -u  --update        \033[0m| \033[1;37mUpdate ehtools shell.\033[0m"
-      echo -e "\033[1;37m    -c  --check-if-root \033[0m| \033[1;37mCheck if root user.\033[0m"
-      echo -e "\033[1;37m    -h  --help          \033[0m| \033[1;37mGive this help list.\033[0m"
+      echo -e "\033[0m    -t  --theme <theme> \033[0m| \033[0mChange ehtsh theme.\033[0m"
+      echo -e "\033[0m    -u  --update        \033[0m| \033[0mUpdate ehtools shell.\033[0m"
+      echo -e "\033[0m    -c  --check-if-root \033[0m| \033[0mCheck if root user.\033[0m"
+      echo -e "\033[0m    -h  --help          \033[0m| \033[0mGive this help list.\033[0m"
       echo -e
       exit
 
@@ -526,15 +526,15 @@ fi
       elif [[ "$2" = "--list" || "$2" = "-l" ]]
       then
       echo -e
-      echo -e "\033[1;37m    ehtsh   \033[0m| \033[1;37mThe ehtsh default theme.\033[0m"
-      echo -e "\033[1;37m    system  \033[0m| \033[1;37mOld terminal theme.\033[0m"
-      echo -e "\033[1;37m    eterm   \033[0m| \033[1;37mElliot terminal theme.\033[0m"
-      echo -e "\033[1;37m    root    \033[0m| \033[1;37mFake root user theme.\033[0m"
-      echo -e "\033[1;37m    kali    \033[0m| \033[1;37mKali Linux theme.\033[0m"
-      echo -e "\033[1;37m    parrot  \033[0m| \033[1;37mParrot OS theme.\033[0m"
-      echo -e "\033[1;37m    dos_fat \033[0m| \033[1;37mDOS cmd theme.\033[0m"
-      echo -e "\033[1;37m    c_disk  \033[0m| \033[1;37mWindows cmd theme.\033[0m"
-      echo -e "\033[1;37m    alpine  \033[0m| \033[1;37mMacOS alpine theme.\033[0m"
+      echo -e "\033[0m    ehtsh   \033[0m| \033[0mThe ehtsh default theme.\033[0m"
+      echo -e "\033[0m    system  \033[0m| \033[0mOld terminal theme.\033[0m"
+      echo -e "\033[0m    eterm   \033[0m| \033[0mElliot terminal theme.\033[0m"
+      echo -e "\033[0m    root    \033[0m| \033[0mFake root user theme.\033[0m"
+      echo -e "\033[0m    kali    \033[0m| \033[0mKali Linux theme.\033[0m"
+      echo -e "\033[0m    parrot  \033[0m| \033[0mParrot OS theme.\033[0m"
+      echo -e "\033[0m    dos_fat \033[0m| \033[0mDOS cmd theme.\033[0m"
+      echo -e "\033[0m    c_disk  \033[0m| \033[0mWindows cmd theme.\033[0m"
+      echo -e "\033[0m    alpine  \033[0m| \033[0mMacOS alpine theme.\033[0m"
       echo -e
       fi
      
