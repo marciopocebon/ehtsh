@@ -427,6 +427,68 @@ fi
         fi
     
     done
+    
+    elif [[ "$2" = "entynet" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        S="\033[1;35m"
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            PWD="$( pwd )"
+trap '' INT TSTP
+trap '' 2
+printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected As -> '$WHO'\a'
+    if [[ "$PWD" = "root" ]]
+    then
+    echo ""$S"███████╗███╗   ██╗████████╗██╗   ██╗███╗   ██╗███████╗████████╗"
+    echo ""$S"██╔════╝████╗  ██║╚══██╔══╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝"
+    echo ""$S"█████╗  ██╔██╗ ██║   ██║    ╚████╔╝ ██╔██╗ ██║█████╗     ██║   "
+    echo ""$S"██╔══╝  ██║╚██╗██║   ██║     ╚██╔╝  ██║╚██╗██║██╔══╝     ██║   "
+    echo ""$S"███████╗██║ ╚████║   ██║      ██║   ██║ ╚████║███████╗   ██║   "
+    echo ""$S"╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝   "
+    echo ""$N"        "$S"***"$N" Welcome To Entynet | Version 2.0 (full) "$S"***"$N"        "
+    echo ""$N"            "$S"***"$N" Powered By Entynetproject "$S"***"$N"                  "
+    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"#"
+    read -p $' ' EXEC
+    else
+    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"$"
+    read -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ -d /eht ]]
+        then    
+            {
+            echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            mkdir /eht
+            echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
          
       elif [[ "$2" = "c_disk" ]]
       then
@@ -535,6 +597,7 @@ fi
       echo -e "\033[0m    dos_fat \033[1;37m| \033[0mDOS cmd theme.\033[0m"
       echo -e "\033[0m    c_disk  \033[1;37m| \033[0mWindows cmd theme.\033[0m"
       echo -e "\033[0m    alpine  \033[1;37m| \033[0mMacOS alpine theme.\033[0m"
+      echo -e "\033[0m    entynet \033[1;37m| \033[0mEntynet theme.\033[0m"
       echo -e
       fi
      
