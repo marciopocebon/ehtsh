@@ -79,6 +79,7 @@
 | dos_fat | DOS cmd theme |
 | c_disk | Windows cmd theme |
 | alpine | MacOS alpine theme |
+| entynet | Entynet panel theme |
 
 # How to change theme
 
