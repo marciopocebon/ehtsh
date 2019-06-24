@@ -459,6 +459,7 @@ printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected As -> '$WHO
     else
     echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"$"
     read -p $' ' EXEC
+    fi
 
 if [[ "$EXEC" = "ls" ]]
 then
