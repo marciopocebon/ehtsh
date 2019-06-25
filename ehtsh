@@ -49,6 +49,9 @@ then
       echo -e "\033[0m    -c  --check-if-root \033[1;37m| \033[0mCheck if user root.\033[0m"
       echo -e "\033[0m    -h  --help          \033[1;37m| \033[0mGive this help list.\033[0m"
       echo -e
+      echo -e "\033[0m    -t -l --theme --list \033[1;37m| \033[0mShow all available themes.\033[0m"
+      echo -e "\033[0m    -t -c --theme --calc \033[1;37m| \033[0mCalculate number of themes.\033[0m"
+      echo -e
       exit
 
 elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
@@ -648,7 +651,11 @@ echo -e
         O="\033[1;93m" # Orange
         B="\033[1;34m" #Blue
         C="\033[0m" #End
-echo -e ""$N"Total 10"$C""
+        echo -e
+echo -e "    Total "$N"|"$C" 10"$C""
+echo -e "    v1.0  "$N"|"$C"  8"$C""
+echo -e "    v1.2  "$N"|"$C"  9"$C""
+echo -e "    v1.3  "$N"|"$C" 10"$C""
 echo -e
 sleep 1
       fi
