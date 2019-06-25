@@ -62,31 +62,15 @@
 
 > ./uninstall.sh
 
-# Ehtools shell options
+# How to execute ehtsh
 
-| Shortcut | Command | Description |
-| --- | --- | --- |
-| -t | ehtsh --theme | Change ehtsh theme |
-| -t -l | ehtsh --theme --list | Show all ehtsh themes |
-| -t -c | ehtsh --theme --calc | Calculate ehtsh themes |
-| -u | ehtsh --update | Update ehtools shell |
-| -c | ehtsh --check-if-root | Check if user root |
-| -h | ehtsh --help | Give this help list |
-
-# Ehtools shell themes
-
-| Theme | Description |
-| --- | --- |
-| ehtsh | The ehtsh default theme |
-| system | Old terminal theme |
-| eterm | Elliot terminal theme |
-| root | Fake root user theme |
-| kali | Kali Linux theme |
-| parrot | Parrot OS theme |
-| dos_fat | DOS cmd theme |
-| c_disk | Windows cmd theme |
-| alpine | MacOS alpine theme |
-| entynet | Entynet panel theme |
+    -t  --theme <theme> | Change ehtsh theme.
+    -u  --update        | Update ehtools shell.
+    -c  --check-if-root | Check if user root.
+    -h  --help          | Give this help list.
+    
+    -t -l --theme --list | Show all available themes.
+    -t -c --theme --calc | Calculate number of themes.
 
 # Ehtools shell examples
 
