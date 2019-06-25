@@ -115,7 +115,8 @@
     
 > ls --color
 
-[x] Syntax
+- [x] Syntax
+- [v] Syntax
  
 # Ehtsh MIT license
  
