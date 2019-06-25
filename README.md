@@ -64,6 +64,8 @@
 
 # How to execute ehtsh
 
+> ehtsh -h
+
     -t  --theme <theme> | Change ehtsh theme.
     -u  --update        | Update ehtools shell.
     -c  --check-if-root | Check if user root.
@@ -85,6 +87,19 @@
     Desktop Videos Media 
     alpine(/root/examples) ~> exit
     [exit 0]
+
+# Ehtools shell themes
+
+    ehtsh   | The ehtsh default theme.
+    system  | Old terminal theme.
+    eterm   | Elliot terminal theme.
+    root    | Fake root user theme.
+    kali    | Kali Linux theme.
+    parrot  | Parrot OS theme.
+    dos_fat | DOS cmd theme.
+    c_disk  | Windows cmd theme.
+    alpine  | MacOS alpine theme.
+    entynet | Entynet panel theme.
 
 # Ehtsh pros and cons
 
