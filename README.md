@@ -115,7 +115,7 @@
     
 > ls --color
 
-# Ehtsh Pros and cons
+# Ehtsh pros and cons
 
 - [x] A lot of themes for comfortable working.
 - [x] Open source shell, open source github shell.
