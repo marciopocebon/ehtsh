@@ -63,7 +63,7 @@
 | -t | ehtsh --theme | Change ehtsh theme |
 | -t -l |ehtsh --theme --list | Show all terminal themes |
 | -u | ehtsh --update | Update ehtools shell |
-| -c | ehtsh --check-if-root | Check if root user |
+| -c | ehtsh --check-if-root | Check if user root |
 | -h | ehtsh --help | Give this help list |
 
 # Ehtools shell themes
