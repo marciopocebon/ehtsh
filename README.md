@@ -114,6 +114,57 @@
     ls --color for it!
     
 > ls --color
+
+'''shell
+elif [[ "$2" = "alpine" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            PWD="$( pwd )"
+trap '' INT TSTP
+trap '' 2
+printf '\033]2;alpine('$PWD')\a'
+    echo -n -e ""$R"alpine"$N"(\033[4;31m"$PWD""$C""$N")"$B" ~"$R">"$C""
+    read -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ -d /eht ]]
+        then    
+            {
+            echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            mkdir /eht
+            echo "$EXEC" >> /eht/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+    
+'''
  
 # Ehtsh MIT license
  
