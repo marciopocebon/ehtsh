@@ -610,6 +610,47 @@ fi
       echo -e "\033[0m    alpine  \033[1;37m| \033[0mMacOS alpine theme.\033[0m"
       echo -e "\033[0m    entynet \033[1;37m| \033[0mEntynet panel theme.\033[0m"
       echo -e
+      
+      elif [[ "$2" = "--calc" || "$2" = "-c" ]]
+      then
+      echo -e
+      function ProgressBarks {
+
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+
+                         
+        
+printf "\rCalculating (${_progress}%%)"
+
+}
+
+
+_start=1
+
+_end=100
+
+for number in $(seq ${_start} ${_end})
+do
+    sleep 0.1
+    ProgressBarks ${number} ${_end}
+done
+
+sleep 3
+echo -e
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+echo -e ""$N"Total 10"$C""
+echo -e
+sleep 1
       fi
      
 else
