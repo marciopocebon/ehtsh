@@ -115,8 +115,14 @@
     
 > ls --color
 
-- [x] Syntax
-- [v] Syntax
+# Pros and cons
+
+- [x] A lot of themes
+- [x] Open source shell
+- [x] Colorful output
+- [x] Special sumbols
+- [ ] Login options
+- [ ] Syntax (if, while)
  
 # Ehtsh MIT license
  
