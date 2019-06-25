@@ -115,14 +115,14 @@
     
 > ls --color
 
-# Pros and cons
+# Ehtsh Pros and cons
 
-- [x] A lot of themes
-- [x] Open source shell
-- [x] Colorful output
-- [x] Special sumbols
-- [ ] Login options
-- [ ] Syntax (if, while)
+- [x] A lot of themes for comfortable working.
+- [x] Open source shell, open source github shell.
+- [x] Colorful output, such as ls utility output.
+- [x] Special sumbols, such as home directory.
+- [ ] Login options, such as login, su and etc.
+- [ ] Syntax options such as if, while and etc.
  
 # Ehtsh MIT license
  
