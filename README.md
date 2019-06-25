@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/language-shell-green.svg">
  </a>
   <a href="https://github.com/entynetproject/ehtools-shell">
-      <img src="https://img.shields.io/badge/themes-9-red.svg?maxAge=2592000">
+      <img src="https://img.shields.io/badge/themes-10-red.svg?maxAge=2592000">
  </a>
   <a href="https://github.com/entynetproject/ehtools-shell/issues?q=is%3Aissue+is%3Aclosed">
       <img src="https://img.shields.io/github/issues/entynetproject/ehtools-shell.svg">
