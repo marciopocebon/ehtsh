@@ -34,11 +34,11 @@
 
 # Ehtools shell credits
 
-Name      : Ehtools Shell
-Developer : Entynetproject
-Version   : v1.3 (ehtsh-v1.3-dev)
-Themes    : Total 10 (ehtsh -t -c)
-Site      : https://entynetproject.simplesite.com/
+    Name      : Ehtools Shell
+    Developer : Entynetproject
+    Version   : v1.3 (ehtsh-v1.3-dev)
+    Themes    : Total 10 (ehtsh -t -c)
+    Site      : https://entynetproject.simplesite.com/
 
 # About ehtools shell
 
