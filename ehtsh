@@ -46,10 +46,9 @@ then
       echo -e
       echo -e "\033[0m    -t  --theme <theme> \033[1;37m| \033[0mChange ehtsh theme.\033[0m"
       echo -e "\033[0m    -u  --update        \033[1;37m| \033[0mUpdate ehtools shell.\033[0m"
-      echo -e "\033[0m    -c  --check-if-root \033[1;37m| \033[0mCheck if root user.\033[0m"
+      echo -e "\033[0m    -c  --check-if-root \033[1;37m| \033[0mCheck if user root.\033[0m"
       echo -e "\033[0m    -h  --help          \033[1;37m| \033[0mGive this help list.\033[0m"
-      echo -e
-      echo -e "\033[0m -t -l  --theme --list  \033[1;37m| \033[0mShow all available themes.\033[0m"
+      echo -e "\033[0m    -t -l  --theme --list\033[1;37m| \033[0mShow all available themes.\033[0m"
       echo -e
       exit
 
