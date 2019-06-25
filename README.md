@@ -56,8 +56,6 @@
 
 # Ehtools shell options
 
-    
-
 | Shortcut | Command | Description |
 | --- | --- | --- |
 | -t | ehtsh --theme | Change ehtsh theme |
@@ -81,7 +79,7 @@
 | alpine | MacOS alpine theme |
 | entynet | Entynet panel theme |
 
-# How to change theme
+# Ehtools shell examples
 
 > ehtsh --theme --list
 
@@ -94,26 +92,6 @@
     Desktop Videos Media 
     alpine(/root/examples) ~> exit
     [exit 0]
-    
-# Ehtools shell ls
-
-> # MacOS Linux
-    
-    INFO: There is a problem with ls utility in ehtsh,
-    no colorized output! But we fixed it, now if you
-    want to view colorized ls output from ehtsh use
-    ls -G for it!
-    
-> ls -G
-
-> # Other Linux
-
-    INFO: There is a problem with ls utility in ehtsh,
-    no colorized output! But we fixed it, now if you
-    want to view colorized ls output from ehtsh use
-    ls --color for it!
-    
-> ls --color
 
 # Ehtsh pros and cons
 
