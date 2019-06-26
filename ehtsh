@@ -24,7 +24,7 @@
 
 if [[ "$1" = "--update" || "$1" = "-u" ]]
 then
-echo -e "\033[1;34mInstalling update...\033[0m"
+echo -e "\033[34mInstalling update...\033[0m"
 {
 cd
 rm -r ehtools-shell
@@ -35,7 +35,7 @@ cd ehtools-shell
 chmod +x install.sh
 ./install.sh
 } &> /dev/null
-echo -e "\033[1;32mSuccessfully updated...\033[0m"
+echo -e "\033[32mSuccessfully updated...\033[0m"
 sleep 1
 exit
 
