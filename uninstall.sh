@@ -39,7 +39,7 @@ exit
 fi
 
 {
-rm -r ~/ehtools-shell
+rm -r /etc/ehtsh
 rm /bin/ehtsh
 rm /usr/local/bin/ehtsh
 } &> /dev/null
