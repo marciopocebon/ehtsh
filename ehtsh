@@ -27,12 +27,12 @@ then
 sleep 1
 echo -e "\033[34mInstalling update...\033[0m"
 {
-cd
-rm -r ehtools-shell
+cd /etc
+rm -r /etc/ehtsh
 rm /bin/ehtsh
 rm /usr/local/bin/ehtsh
 git clone https://github.com/entynetproject/ehtools-shell.git
-cd ehtools-shell
+cd 
 chmod +x install.sh
 ./install.sh
 } &> /dev/null
