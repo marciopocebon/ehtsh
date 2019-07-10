@@ -42,7 +42,7 @@
 
 # About ehtools shell
 
-    INFO: Ehtools Shell is a simple ehtools shell
+    INFO: Ehtools Shell (ehtsh) is a simple ehtools shell
     with different functions and themes for comfortable
     working in your unix terminal!
 
