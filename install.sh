@@ -38,25 +38,25 @@ sleep 1
 exit
 fi
 
-if [[ -d ~/ehtools-shell ]]
+if [[ -d /etc/ehtsh ]]
 then
-cd ~/ehtools-shell
+cd /etc/ehtsh
 {
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
 } &> /dev/null
-cd ~/ehtools-shell
+cd /etc/ehtsh
 else
-cd ~
+cd /etc
 {
 git clone https://github.com/entynetproject/ehtools-shell.git
-cd ~/ehtools-shell
+cd /etc/ehtsh
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
 } &> /dev/null
-cd ~/ehtools-shell
+cd /etc/ehtsh
 fi
