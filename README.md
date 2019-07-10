@@ -12,19 +12,19 @@
   <a href="http://entynetproject.simplesite.com/">
     <img src="https://img.shields.io/badge/entynetproject-Ivan%20Nikolsky-blue.svg">
   </a>
-  <a href="https://github.com/entynetproject/ehtools-shell/releases">
-    <img src="https://img.shields.io/github/release/entynetproject/ehtools-shell.svg">
+  <a href="https://github.com/entynetproject/ehtsh/releases">
+    <img src="https://img.shields.io/github/release/entynetproject/ehtsh.svg">
   </a>
   <a href="https://ru.m.wikipedia.org/wiki/сценарий-командной-строки">
     <img src="https://img.shields.io/badge/language-shell-green.svg">
  </a>
-  <a href="https://github.com/entynetproject/ehtools-shell">
+  <a href="https://github.com/entynetproject/ehtsh">
       <img src="https://img.shields.io/badge/themes-10-red.svg?maxAge=2592000">
  </a>
-  <a href="https://github.com/entynetproject/ehtools-shell/issues?q=is%3Aissue+is%3Aclosed">
-      <img src="https://img.shields.io/github/issues/entynetproject/ehtools-shell.svg">
+  <a href="https://github.com/entynetproject/ehtsh/issues?q=is%3Aissue+is%3Aclosed">
+      <img src="https://img.shields.io/github/issues/entynetproject/ehtsh.svg">
   </a>
-  <a href="https://github.com/entynetproject/ehtools-shell/wiki">
+  <a href="https://github.com/entynetproject/ehtsh/wiki">
       <img src="https://img.shields.io/badge/wiki%20-ehtsh-lightgrey.svg">
  </a>
   <a href="https://mobile.twitter.com/ehtools">
