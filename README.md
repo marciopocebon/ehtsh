@@ -48,7 +48,7 @@
 
 # How to install ehtsh
 
-> cd ehtools-shell
+> cd ehtsh
 
 > chmod +x install.sh
 
@@ -56,7 +56,7 @@
 
 # How to uninstall ehtsh
 
-> cd ehtools-shell
+> cd ehtsh
 
 > chmod +x uninstall.sh
 
