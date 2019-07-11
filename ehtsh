@@ -125,15 +125,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -173,15 +173,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -221,15 +221,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -274,15 +274,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -322,15 +322,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -370,15 +370,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -418,15 +418,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -491,15 +491,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -539,15 +539,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -586,15 +586,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
@@ -699,15 +699,15 @@ else
 $EXEC
 fi
 fi
-        if [[ -d /eht ]]
+        if [[ true ]]
         then    
             {
-            echo "$EXEC" >> /eht/.ehtsh_history
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         else
             {
-            mkdir /eht
-            echo "$EXEC" >> /eht/.ehtsh_history
+            
+            echo "$EXEC" >> ~/.ehtsh_history
             } &> /dev/null
         fi
     
