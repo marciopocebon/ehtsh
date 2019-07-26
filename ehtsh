@@ -43,7 +43,7 @@ exit
 elif [[ "$1" = "--help" || "$1" = "-h" ]]
 then
       echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
-      echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
+      echo -e "\033[1;37mCopyright (C) 2019, Entynetproject. All Rights Reserved.\033[0m"
       echo -e
       echo -e "\033[0m    -t  --theme <theme> \033[1;37m| \033[0mChange ehtsh theme.\033[0m"
       echo -e "\033[0m    -u  --update        \033[1;37m| \033[0mUpdate ehtools shell.\033[0m"
@@ -85,7 +85,7 @@ fi
 fi
 
 echo -e "\033[1;37mEhtools Shell - simple ehtools shell.\033[0m"
-echo -e "\033[1;37mCopyright (C) 2019 Entynetproject <Ivan Nikolsky>\033[0m"
+echo -e "\033[1;37mCopyright (C) 2019, Entynetproject. All Rights Reserved.\033[0m"
   
 WHO="$( whoami )"
 PWD="$( pwd )"
