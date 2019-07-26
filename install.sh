@@ -51,7 +51,7 @@ cd /etc/ehtsh
 else
 cd /etc
 {
-git clone https://github.com/entynetproject/ehtools-shell.git
+git clone https://github.com/entynetproject/ehtsh.git
 cd /etc/ehtsh
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
