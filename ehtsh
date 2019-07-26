@@ -25,6 +25,11 @@
 if [[ "$1" = "--update" || "$1" = "-u" ]]
 then
 sleep 1
+if [[ "$WHO" != "root" ]]
+then
+echo -e "\033[31mehtsh.update(): /etc/ehtsh: Permission denied\033[0m"
+exit
+fi
 echo -e "\033[34mInstalling update...\033[0m"
 {
 cd /etc
