@@ -31,7 +31,7 @@ cd /etc
 rm -r /etc/ehtsh
 rm /bin/ehtsh
 rm /usr/local/bin/ehtsh
-git clone https://github.com/entynetproject/ehtools-shell.git
+git clone https://github.com/entynetproject/ehtsh.git
 cd 
 chmod +x install.sh
 ./install.sh
