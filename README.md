@@ -76,17 +76,17 @@
 
 # Ehtools shell examples
 
-> ehtsh --theme --list
+> If you want to list all themes, run
 
-    INFO: Select theme, for example alpine.
+    ehtsh --theme --list
+    
+> If you want to calculate all themes, run
 
-> ehtsh --theme alpine
+    ehtsh --theme --calc
 
-    alpine(/) ~> cd /root/examples
-    alpine(/root/examples) ~> ls 
-    Desktop Videos Media 
-    alpine(/root/examples) ~> exit
-    [exit 0]
+> If you want to change theme, run
+
+    ehtsh --theme <theme>
 
 # Ehtools shell themes
 
