@@ -76,17 +76,17 @@
 
 # Ehtools shell examples
 
-> If you want to list all themes, run
+> Example of the listing all themes
 
     ehtsh --theme --list
     
-> If you want to calculate all themes, run
+> Example of the calculating all themes
 
     ehtsh --theme --calc
 
-> If you want to change theme, run
+> Example of the changing ehtsh theme
 
-    ehtsh --theme <theme>
+    ehtsh --theme ehtsh
 
 # Ehtools shell themes
 
