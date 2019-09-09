@@ -42,9 +42,9 @@
 
 # About ehtools shell
 
-    INFO: Ehtools Shell (ehtsh) is a simple ehtools shell
-    with different functions and themes for comfortable
-    working in your unix terminal!
+    INFO: Ehtools Shell (ehtsh) is a simple 
+    ehtools shell with different functions and 
+    themes for comfortable working in command-line!
 
 # How to install ehtsh
 
