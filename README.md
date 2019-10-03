@@ -93,15 +93,6 @@
     alpine  | MacOS alpine theme.
     entynet | Entynet panel theme.
 
-# Ehtsh pros and cons
-
-- [x] A lot of themes for comfortable working.
-- [x] Open source shell, open source github shell.
-- [x] Colorful output, such as ls utility output.
-- [x] Special sumbols, such as home directory.
-- [ ] Login options, such as login, su and etc.
-- [ ] Syntax options such as if, while and etc.
- 
 # Ehtsh MIT license
  
     MIT License
