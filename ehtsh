@@ -112,7 +112,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -160,7 +160,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e "as system:"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -208,7 +208,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;eterm ~> '$PWD'\a'
     echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -261,7 +261,7 @@ printf '\033]2;user:root in '$PWD'\a'
     else
     echo -n -e ""$N"["$R"✗"$N"]-\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
     fi
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -309,7 +309,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;'$WHO'@kali:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -357,7 +357,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;'$PWD'\a'
     echo -n -e "\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -405,7 +405,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;DOS_fat ~> '$PWD'\a'
     echo -n -e "DOS_fat ~> "$PWD":"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -474,10 +474,10 @@ printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected As -> '$WHO
     if [[ "$WHO" = "root" ]]
     then
     echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"#"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
     else
     echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"$"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
     fi
 
 if [[ "$EXEC" = "ls" ]]
@@ -526,7 +526,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;C:\'$PWD'\a'
     echo -n -e "C:\'$PWD'>"
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -573,7 +573,7 @@ trap '' INT TSTP
 trap '' 2
 printf '\033]2;alpine('$PWD')\a'
     echo -n -e ""$R"alpine"$N"(\033[4;31m"$PWD""$C""$N")"$B" ~"$R">"$C""
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -686,7 +686,7 @@ printf '\033]2;ehtsh\a'
     else
     echo -n -e "ehtsh-1.3$"
     fi
-    read -p $' ' EXEC
+    read -e -p $' ' EXEC
 
 if [[ "$EXEC" = "ls" ]]
 then
