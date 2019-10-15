@@ -2,7 +2,7 @@
 
 # MIT License
 
-# Copyright (C) 2019, Ehtools Team. All Rights Reserved.
+# Copyright (C) 2019, Entynetproject. All Rights Reserved.
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,41 +22,35 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-CE="\033[0m"
 RS="\033[1;31m"
 YS="\033[1;33m"
+CE="\033[0m"
 
-WHO="$( whoami )"
-
-if [[ "$WHO" != "root" ]]
+if [[ $EUID -ne 0 ]]
 then
-sleep 1
-echo -e "$RS"run it as"$CE" "$YS"root"$CE"
-sleep 1
-echo -e "$RS"or use"$CE" "$YS"sudo"$CE"
-sleep 1
-exit
+   echo "["$RS"*"$CE"] "$RS"This script must be run as "$YS"root"$C"" 1>&2
+   exit
 fi
 
-if [[ -d /etc/ehtsh ]]
+if [[ -d ~/ehtsh ]]
 then
-cd /etc/ehtsh
+cd ~/ehtsh
 {
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
 } &> /dev/null
-cd /etc/ehtsh
+cd ~/ehtsh
 else
-cd /etc
+cd ~
 {
 git clone https://github.com/entynetproject/ehtsh.git
-cd /etc/ehtsh
+cd ~/ehtsh
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
 } &> /dev/null
-cd /etc/ehtsh
+cd ~/ehtsh
 fi
