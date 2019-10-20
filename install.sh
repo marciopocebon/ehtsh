@@ -36,7 +36,7 @@ fi
 
 if [[ -d ~/ehtsh ]]
 then
-cd ~/ehtsh
+cd ~/ehtsh/bin
 {
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
@@ -48,7 +48,7 @@ else
 cd ~
 {
 git clone https://github.com/entynetproject/ehtsh.git
-cd ~/ehtsh
+cd ~/ehtsh/bin
 cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
