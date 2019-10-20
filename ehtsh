@@ -68,6 +68,11 @@ echo -e "Copyright (C) 2019, Ehtools Team. All Rights Reserved."
   
 WHO="$( whoami )"
 PWD="$( pwd )"
+if [[ $PWD = "$(cd ~)" ]]
+then
+PWD="~"
+fi
+
   if [[ "$1" = "--theme" || "$1" = "-t" ]]
   then
   if [[ $2 = "" ]]
@@ -89,9 +94,17 @@ PWD="$( pwd )"
             PWD="$( pwd )"
 
 
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+
+if [[ $EUID -ne 0 ]]
+then
+printf '\033]2;'$WHO'@ehtools:'$PWD'$\a'
+echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m$\033[0m"
+read -e -p $' ' EXEC
+else
+    printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
     read -e -p $' ' EXEC
+    fi
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -137,7 +150,7 @@ fi
             PWD="$( pwd )"
 
 
-printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+printf '\033]2;as system\a'
     echo -n -e "as system:"
     read -e -p $' ' EXEC
 
@@ -185,9 +198,15 @@ fi
             PWD="$( pwd )"
 
 
-printf '\033]2;eterm ~> '$PWD'\a'
+printf '\033]2;'$WHO'\a'
+if [[ $EUID -ne 0 ]]
+then
     echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
     read -e -p $' ' EXEC
+    else
+    echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
+    read -e -p $' ' EXEC
+    fi
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -285,10 +304,16 @@ fi
             WHO="$( whoami )"
             PWD="$( pwd )"
 
-
-printf '\033]2;'$WHO'@kali:'$PWD'#\a'
+if [[ $EUID -ne 0 ]]
+then
+printf '\033]2;'$WHO'@kali:'$PWD'$\a'
+    echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m$\033[0m"
+    read -e -p $' ' EXEC
+    else
+    printf '\033]2;'$WHO'@kali:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
     read -e -p $' ' EXEC
+fi
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -333,10 +358,14 @@ fi
             WHO="$( whoami )"
             PWD="$( pwd )"
 
-
+if [[ $EUID -ne 0 ]]
+then
 printf '\033]2;'$PWD'\a'
-    echo -n -e "\[\033[0;31m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]root\[\033[01;33m\]@\[\033[01;96m\]\h'; else echo '\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h'; fi)\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\\$\[\e[0m\]"
-    read -e -p $' ' EXEC
+    read -e -p $'\033[1;31m$\033[0m ' EXEC
+    else
+    printf '\033]2;'$PWD'\a'
+    read -e -p $'\033[1;31m#\033[0m ' EXEC
+    fi
 
 if [[ "$EXEC" = "ls" ]]
 then
@@ -587,14 +616,14 @@ fi
       elif [[ "$2" = "--list" || "$2" = "-l" ]]
       then
       echo -e
-      echo -e "\033[0m    ehtsh   \033[1;37m| \033[0mThe ehtsh default theme.\033[0m"
-      echo -e "\033[0m    system  \033[1;37m| \033[0mOld terminal theme.\033[0m"
-      echo -e "\033[0m    eterm   \033[1;37m| \033[0mElliot terminal theme.\033[0m"
-      echo -e "\033[0m    root    \033[1;37m| \033[0mFake root user theme.\033[0m"
-      echo -e "\033[0m    kali    \033[1;37m| \033[0mKali Linux theme.\033[0m"
-      echo -e "\033[0m    parrot  \033[1;37m| \033[0mParrot OS theme.\033[0m"
       echo -e "\033[0m    dos_fat \033[1;37m| \033[0mDOS cmd theme.\033[0m"
       echo -e "\033[0m    c_disk  \033[1;37m| \033[0mWindows cmd theme.\033[0m"
+      echo -e "\033[0m    system  \033[1;37m| \033[0mOld terminal theme.\033[0m"
+      echo -e "\033[0m    ehtsh   \033[1;37m| \033[0mThe ehtsh default theme.\033[0m"
+      echo -e "\033[0m    root    \033[1;37m| \033[0mRoot user checker theme.\033[0m"
+      echo -e "\033[0m    red     \033[1;37m| \033[0mThe red theme.\033[0m"
+      echo -e "\033[0m    kali    \033[1;37m| \033[0mKali Linux theme.\033[0m"
+      echo -e "\033[0m    eterm   \033[1;37m| \033[0mElliot terminal theme.\033[0m"
       echo -e "\033[0m    alpine  \033[1;37m| \033[0mMacOS alpine theme.\033[0m"
       echo -e "\033[0m    entynet \033[1;37m| \033[0mEntynet panel theme.\033[0m"
       echo -e
