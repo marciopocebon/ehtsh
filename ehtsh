@@ -97,6 +97,11 @@ WHO="$( whoami )"
 PWD="$( pwd )"
   if [[ "$1" = "--theme" || "$1" = "-t" ]]
   then
+  if [[ $2 = "" ]]
+  then
+  echo -e "Usage: ehtsh $1 [-c/--calc|-l/--list|<theme>]"
+  exit
+  fi      
       if [[ "$2" = "ehtsh" ]]
       then
           while true
