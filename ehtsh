@@ -69,10 +69,11 @@ fi
 echo -e "Copyright (C) 2019, Ehtools Team. All Rights Reserved."
   
 WHO="$( whoami )"
-PWD="$( pwd )"
-if [[ $PWD = "$(cd ~)" ]]
+if [[ "$(pwd)" = "$(cd && pwd)" ]]
 then
 PWD="~"
+else
+PWD="$(pwd)"
 fi
 
   if [[ "$1" = "--theme" || "$1" = "-t" ]]
