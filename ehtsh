@@ -24,6 +24,7 @@
 
 if [[ "$1" = "--help" || "$1" = "-h" ]]
 then
+      echo -e
       echo -e "\033[0mUsage: ehtsh [OPTION...]\033[0m"
       echo -e "\033[0mCopyright (C) 2019, Ehtools Team. All Rights Reserved.\033[0m"
       echo -e
@@ -34,6 +35,7 @@ then
       echo -e
       echo -e "\033[0m   -t -l  --theme --list \033[1;37m| \033[0mShow all available themes.\033[0m"
       echo -e "\033[0m   -t -c  --theme --calc \033[1;37m| \033[0mCalculate number of themes.\033[0m"
+      echo -e
       exit
 
 elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
