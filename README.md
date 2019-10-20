@@ -85,15 +85,15 @@
 
 # Ehtools shell themes
 
-    ehtsh   | The ehtsh default theme.
-    system  | Old terminal theme.
-    eterm   | Elliot terminal theme.
-    root    | Fake root user theme.
-    kali    | Kali Linux theme.
-    parrot  | Parrot OS theme.
     dos_fat | DOS cmd theme.
     c_disk  | Windows cmd theme.
-    alpine  | MacOS alpine theme.
+    system  | Old terminal theme.
+    ehtsh   | The ehtsh default theme.
+    root    | Root user checker theme.
+    red     | The red theme.
+    kali    | Kali Linux theme.
+    eterm   | Elliot terminal theme.
+    alpine  | The macOS alpine theme.
     entynet | Entynet panel theme.
 
 # Ehtsh MIT license
