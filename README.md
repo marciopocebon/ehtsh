@@ -58,13 +58,16 @@
 
 > ehtsh -h
 
-    -t  --theme <theme> | Change ehtsh theme.
-    -u  --update        | Update ehtools shell.
-    -c  --check-if-root | Check if user root.
-    -h  --help          | Give this help list.
+    Usage: ehtsh [OPTION...]
+    Copyright (C) 2019, Ehtools Team. All Rights Reserved.   
+       
+       -t  --theme <theme> | Change ehtsh theme.
+       -u  --update        | Update ehtools shell.
+       -c  --check-if-root | Check if user root.
+       -h  --help          | Give this help list.
     
-    -t -l  --theme --list | Show all available themes.
-    -t -c  --theme --calc | Calculate number of themes.
+       -t -l  --theme --list | Show all available themes.
+       -t -c  --theme --calc | Calculate number of themes.
 
 # Ehtools shell examples
 
