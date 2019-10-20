@@ -345,7 +345,7 @@ fi
     
     done
           
-      elif [[ "$2" = "parrot" ]]
+      elif [[ "$2" = "red" ]]
       then
            while true
     do
@@ -616,16 +616,16 @@ fi
       elif [[ "$2" = "--list" || "$2" = "-l" ]]
       then
       echo -e
-      echo -e "\033[0m    dos_fat \033[1;37m| \033[0mDOS cmd theme.\033[0m"
-      echo -e "\033[0m    c_disk  \033[1;37m| \033[0mWindows cmd theme.\033[0m"
-      echo -e "\033[0m    system  \033[1;37m| \033[0mOld terminal theme.\033[0m"
-      echo -e "\033[0m    ehtsh   \033[1;37m| \033[0mThe ehtsh default theme.\033[0m"
-      echo -e "\033[0m    root    \033[1;37m| \033[0mRoot user checker theme.\033[0m"
-      echo -e "\033[0m    red     \033[1;37m| \033[0mThe red theme.\033[0m"
-      echo -e "\033[0m    kali    \033[1;37m| \033[0mKali Linux theme.\033[0m"
-      echo -e "\033[0m    eterm   \033[1;37m| \033[0mElliot terminal theme.\033[0m"
-      echo -e "\033[0m    alpine  \033[1;37m| \033[0mThe macOS alpine theme.\033[0m"
-      echo -e "\033[0m    entynet \033[1;37m| \033[0mEntynet panel theme.\033[0m"
+      echo -e "\033[0m   dos_fat \033[1;37m| \033[0mDOS cmd theme.\033[0m"
+      echo -e "\033[0m   c_disk  \033[1;37m| \033[0mWindows cmd theme.\033[0m"
+      echo -e "\033[0m   system  \033[1;37m| \033[0mOld terminal theme.\033[0m"
+      echo -e "\033[0m   ehtsh   \033[1;37m| \033[0mThe ehtsh default theme.\033[0m"
+      echo -e "\033[0m   root    \033[1;37m| \033[0mRoot user checker theme.\033[0m"
+      echo -e "\033[0m   red     \033[1;37m| \033[0mThe red theme.\033[0m"
+      echo -e "\033[0m   kali    \033[1;37m| \033[0mKali Linux theme.\033[0m"
+      echo -e "\033[0m   eterm   \033[1;37m| \033[0mElliot terminal theme.\033[0m"
+      echo -e "\033[0m   alpine  \033[1;37m| \033[0mThe macOS alpine theme.\033[0m"
+      echo -e "\033[0m   entynet \033[1;37m| \033[0mEntynet panel theme.\033[0m"
       echo -e
       
       elif [[ "$2" = "--calc" || "$2" = "-c" ]]
@@ -666,10 +666,10 @@ echo -e
         B="\033[1;34m" #Blue
         C="\033[0m" #End
         echo -e
-echo -e "    Total "$N"|"$C" 10"$C""
-echo -e "    v1.0  "$N"|"$C"  8"$C""
-echo -e "    v1.2  "$N"|"$C"  9"$C""
-echo -e "    v1.3  "$N"|"$C" 10"$C""
+echo -e "   Total "$N"|"$C" 10"$C""
+echo -e "   v1.0  "$N"|"$C"  8"$C""
+echo -e "   v1.2  "$N"|"$C"  9"$C""
+echo -e "   v1.3  "$N"|"$C" 10"$C""
 echo -e
 sleep 1
       fi
