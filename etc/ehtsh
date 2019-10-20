@@ -156,11 +156,11 @@ fi
 
 if [[ $EUID -ne 0 ]]
 then
-printf '\033]2;'$WHO'@ehtools:'$PWD'$\a'
+# printf '\033]2;'$WHO'@ehtools:'$PWD'$\a'
 echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m$\033[0m"
 read -e -p $' ' EXEC
 else
-    printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+    # printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
     read -e -p $' ' EXEC
     fi
@@ -214,7 +214,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;as system\a'
+# printf '\033]2;as system\a'
     echo -n -e "as system:"
     read -e -p $' ' EXEC
 
@@ -267,7 +267,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;'$WHO'\a'
+# printf '\033]2;'$WHO'\a'
 if [[ $EUID -ne 0 ]]
 then
     echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
@@ -326,7 +326,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;user:root in '$PWD'\a'
+# printf '\033]2;user:root in '$PWD'\a'
     if [[ $EUID = 0 ]]
     then
     echo -n -e ""$N"["$G"✔"$N"]-\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
@@ -385,11 +385,11 @@ fi
 
 if [[ $EUID -ne 0 ]]
 then
-printf '\033]2;'$WHO'@kali:'$PWD'$\a'
+# printf '\033]2;'$WHO'@kali:'$PWD'$\a'
     echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m$\033[0m"
     read -e -p $' ' EXEC
     else
-    printf '\033]2;'$WHO'@kali:'$PWD'#\a'
+    # printf '\033]2;'$WHO'@kali:'$PWD'#\a'
     echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
     read -e -p $' ' EXEC
 fi
@@ -444,10 +444,10 @@ fi
 
 if [[ $EUID -ne 0 ]]
 then
-printf '\033]2;'$PWD'\a'
+# printf '\033]2;'$PWD'\a'
     read -e -p $'\033[1;31m$\033[0m ' EXEC
     else
-    printf '\033]2;'$PWD'\a'
+    # printf '\033]2;'$PWD'\a'
     read -e -p $'\033[1;31m#\033[0m ' EXEC
     fi
 
@@ -500,7 +500,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;DOS_fat ~> '$PWD'\a'
+# printf '\033]2;DOS_fat ~> '$PWD'\a'
     echo -n -e "DOS_fat ~> "$PWD":"
     read -e -p $' ' EXEC
 
@@ -571,7 +571,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected as '$WHO'\a'
+# printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected as '$WHO'\a'
     
     if [[ $EUID = 0 ]]
     then
@@ -631,7 +631,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;C:\'$PWD'\a'
+# printf '\033]2;C:\'$PWD'\a'
     echo -n -e "C:\'$PWD'>"
     read -e -p $' ' EXEC
 
@@ -683,7 +683,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;alpine('$PWD')\a'
+# printf '\033]2;alpine('$PWD')\a'
     echo -n -e ""$R"alpine"$N"(\033[4;31m"$PWD""$C""$N")"$B" ~"$R">"$C""
     read -e -p $' ' EXEC
 
@@ -734,6 +734,7 @@ fi
       
       elif [[ "$2" = "--calc" || "$2" = "-c" ]]
       then
+      # printf '\033]2;Calculating...\a'
       echo -e
       function ProgressBarks {
 
@@ -796,7 +797,7 @@ PWD="$(pwd)"
 fi
 
 
-printf '\033]2;ehtsh\a'
+# printf '\033]2;ehtsh\a'
     if [[ $EUID = 0 ]]
     then
     echo -n -e "ehtsh-1.3#"
