@@ -22,32 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-if [[ "$1" = "--update" || "$1" = "-u" ]]
-then
-if [[ $EUID -ne 0 ]]
-then
-sleep 1
-echo -e "\033[31mPermission denied!\033[0m"
-sleep 1
-exit
-fi
-sleep 1
-echo -e "\033[34mInstalling update...\033[0m"
-{
-cd /etc
-rm -r /etc/ehtsh
-rm /bin/ehtsh
-rm /usr/local/bin/ehtsh
-git clone https://github.com/entynetproject/ehtsh.git
-cd 
-chmod +x install.sh
-./install.sh
-} &> /dev/null
-echo -e "\033[32mSuccessfully updated...\033[0m"
-sleep 1
-exit
-
-elif [[ "$1" = "--help" || "$1" = "-h" ]]
+if [[ "$1" = "--help" || "$1" = "-h" ]]
 then
       echo -e "\033[0mUsage: ehtsh [OPTION...]\033[0m"
       echo -e "\033[0mCopyright (C) 2019, Ehtools Team. All Rights Reserved.\033[0m"
