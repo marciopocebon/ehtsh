@@ -71,7 +71,12 @@ fi
 
 
 WHO="$(whoami)"
+if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
 PWD="$(pwd)"
+fi
 
   if [[ "$1" = "--theme" || "$1" = "-t" ]]
   then
@@ -91,7 +96,12 @@ PWD="$(pwd)"
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 
@@ -147,7 +157,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;as system\a'
@@ -195,7 +210,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;'$WHO'\a'
@@ -249,7 +269,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;user:root in '$PWD'\a'
@@ -302,7 +327,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 if [[ $EUID -ne 0 ]]
 then
@@ -356,7 +386,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 if [[ $EUID -ne 0 ]]
 then
@@ -408,7 +443,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;DOS_fat ~> '$PWD'\a'
@@ -474,7 +514,12 @@ fi
         S="\033[1;35m"
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected as '$WHO'\a'
@@ -529,7 +574,12 @@ fi
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;C:\'$PWD'\a'
@@ -576,7 +626,12 @@ elif [[ "$2" = "alpine" ]]
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;alpine('$PWD')\a'
@@ -684,7 +739,12 @@ else
         B="\033[1;34m" #Blue
         C="\033[0m" #End
             WHO="$( whoami )"
-            PWD="$( pwd )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
 
 
 printf '\033]2;ehtsh\a'
