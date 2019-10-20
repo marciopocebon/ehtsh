@@ -24,6 +24,8 @@
 
 if [[ "$1" = "--help" || "$1" = "-h" ]]
 then
+      cd ~/ehtsh
+      cat banner/banner.txt
       echo -e
       echo -e "\033[0mUsage: ehtsh [OPTION...]\033[0m"
       echo -e "\033[0mCopyright (C) 2019, Ehtools Team. All Rights Reserved.\033[0m"
