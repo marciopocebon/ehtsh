@@ -51,6 +51,7 @@ if [[ $2 = "" ]]
   fi  
   if [[ "$2" = "disable" ]]
   then
+  printf '\033]2;Disabling...\a'
   if [[ -d ~/ehtsh/.disabled ]]
   then
   sleep 3
@@ -71,6 +72,7 @@ if [[ $2 = "" ]]
   fi
   if [[ "$2" = "enable" ]]
   then
+  printf '\033]2;Enabling...\a'
   if [[ ! -d ~/ehtsh/.disabled ]]
   then
   sleep 3
@@ -92,6 +94,7 @@ if [[ $2 = "" ]]
   
 elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
 then
+printf '\033]2;Checking...\a'
 if [[ $EUID -ne 0 ]]
 then
         R="\033[1;31m" # Red
@@ -734,6 +737,7 @@ fi
       
       elif [[ "$2" = "--calc" || "$2" = "-c" ]]
       then
+      printf '\033]2;Calculating...\a'
       echo -e
       function ProgressBarks {
 
