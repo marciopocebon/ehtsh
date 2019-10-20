@@ -477,14 +477,14 @@ fi
             PWD="$( pwd )"
 
 
-printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected As -> '$WHO'\a'
+printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected as '$WHO'\a'
     
     if [[ $EUID = 0 ]]
     then
-    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"#"
+    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"#\033[0m"
     read -e -p $' ' EXEC
     else
-    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"$"
+    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"$\033[0m"
     read -e -p $' ' EXEC
     fi
 
@@ -624,7 +624,7 @@ fi
       echo -e "\033[0m    red     \033[1;37m| \033[0mThe red theme.\033[0m"
       echo -e "\033[0m    kali    \033[1;37m| \033[0mKali Linux theme.\033[0m"
       echo -e "\033[0m    eterm   \033[1;37m| \033[0mElliot terminal theme.\033[0m"
-      echo -e "\033[0m    alpine  \033[1;37m| \033[0mMacOS alpine theme.\033[0m"
+      echo -e "\033[0m    alpine  \033[1;37m| \033[0mThe macOS alpine theme.\033[0m"
       echo -e "\033[0m    entynet \033[1;37m| \033[0mEntynet panel theme.\033[0m"
       echo -e
       
