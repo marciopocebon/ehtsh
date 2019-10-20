@@ -70,10 +70,6 @@ echo -e "Copyright (C) 2019, Ehtools Team. All Rights Reserved."
 
 WHO="$(whoami)"
 PWD="$(pwd)"
-if [[ $PWD = $HOME ]]
-then
-PWD="~"
-fi
 
   if [[ "$1" = "--theme" || "$1" = "-t" ]]
   then
