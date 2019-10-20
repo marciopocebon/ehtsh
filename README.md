@@ -63,8 +63,8 @@
     -c  --check-if-root | Check if user root.
     -h  --help          | Give this help list.
     
-    -t -l --theme --list | Show all available themes.
-    -t -c --theme --calc | Calculate number of themes.
+    -t -l  --theme --list | Show all available themes.
+    -t -c  --theme --calc | Calculate number of themes.
 
 # Ehtools shell examples
 
