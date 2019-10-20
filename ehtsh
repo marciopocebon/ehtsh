@@ -461,8 +461,8 @@ fi
       echo -e ""$S"██╔══╝  ██║╚██╗██║   ██║     ╚██╔╝  ██║╚██╗██║██╔══╝     ██║   "
       echo -e ""$S"███████╗██║ ╚████║   ██║      ██║   ██║ ╚████║███████╗   ██║   "
       echo -e ""$S"╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝   "
-      echo -e ""$N"        "$S"***"$N" Welcome to Entynet | Version 2.0 (full) "$S"***"$N"        "
-      echo -e ""$N"              "$S"***"$N" Powered by Entynetproject "$S"***"$N"                  "
+      echo -e ""$N"       "$S"***"$N" Welcome to Entynet | Version 2.0 (full) "$S"***"$N"        "
+      echo -e ""$N"             "$S"***"$N" Powered by Entynetproject "$S"***"$N"                  "
       echo -e
            while true
     do
