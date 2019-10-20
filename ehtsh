@@ -31,16 +31,65 @@ then
       echo -e "\033[0mUsage: ehtsh [OPTION...]\033[0m"
       echo -e "\033[0mCopyright (C) 2019, Ehtools Team. All Rights Reserved.\033[0m"
       echo -e
-      echo -e "\033[0m   -t  --theme <theme> \033[1;37m| \033[0mChange ehtsh theme.\033[0m"
-      echo -e "\033[0m   -u  --update        \033[1;37m| \033[0mUpdate ehtools shell.\033[0m"
-      echo -e "\033[0m   -c  --check-if-root \033[1;37m| \033[0mCheck if user root.\033[0m"
-      echo -e "\033[0m   -h  --help          \033[1;37m| \033[0mGive this help list.\033[0m"
+      echo -e "\033[0m   -t  --theme <theme>  \033[1;37m| \033[0mChange ehtsh theme.\033[0m"
+      echo -e "\033[0m   -l  --labels <state> \033[1;37m| \033[0mEnable/disable labels.\033[0m"
+      echo -e "\033[0m   -u  --update         \033[1;37m| \033[0mUpdate ehtools shell.\033[0m"
+      echo -e "\033[0m   -c  --check-if-root  \033[1;37m| \033[0mCheck if user root.\033[0m"
+      echo -e "\033[0m   -h  --help           \033[1;37m| \033[0mGive this help list.\033[0m"
       echo -e
       echo -e "\033[0m   -t -l  --theme --list \033[1;37m| \033[0mShow all available themes.\033[0m"
       echo -e "\033[0m   -t -c  --theme --calc \033[1;37m| \033[0mCalculate number of themes.\033[0m"
       echo -e
       exit
 
+elif [[ "$1" = "--labels" || "$1" = "-l" ]]
+then
+if [[ $2 = "" ]]
+  then
+  echo -e "Usage: ehtsh $1 <state>"
+  exit
+  fi  
+  if [[ "$2" = "disable" ]]
+  then
+  if [[ -d ~/ehtsh/.disabled ]]
+  then
+  sleep 3
+  echo -e "Error, labels is already disabled!"
+  sleep 1
+  exit
+  else
+  cd ~/ehtsh
+  mkdir .disabled
+  mv ehtsh .disabled
+  cp etc/ehtsh ~/ehtsh
+  chmod +x ~/ehtsh/ehtsh
+  sleep 3
+  echo -e "Success, labels disabled!"
+  sleep 1
+  exit
+  fi
+  fi
+  if [[ "$2" = "enable" ]]
+  then
+  if [[ ! -d ~/ehtsh/.disabled ]]
+  then
+  sleep 3
+  echo -e "Error, labels is already enabled!"
+  sleep 1
+  exit
+  else
+  cd ~/ehtsh
+  rm ehtsh
+  mv .disabled/ehtsh ~/ehtsh
+  rm -r .disabled
+  chmod +x ~/ehtsh/ehtsh
+  sleep 3
+  echo -e "Success, labels enabled!"
+  sleep 1
+  exit
+  fi
+  fi
+  
 elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
 then
 if [[ $EUID -ne 0 ]]
@@ -82,9 +131,9 @@ fi
   then
   if [[ $2 = "" ]]
   then
-  echo -e "Usage: ehtsh $1 [-c/--calc|-l/--list|<theme>]"
+  echo -e "Usage: ehtsh $1 [-c/--calc|-l/--list|-n/--no <theme>|<theme>]"
   exit
-  fi      
+  fi    
       if [[ "$2" = "ehtsh" ]]
       then
           while true
