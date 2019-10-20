@@ -32,7 +32,7 @@ then
       echo -e "\033[0mCopyright (C) 2019, Ehtools Team. All Rights Reserved.\033[0m"
       echo -e
       echo -e "\033[0m   -t  --theme <theme>  \033[1;37m| \033[0mChange ehtsh theme.\033[0m"
-      echo -e "\033[0m   -l  --labels <state> \033[1;37m| \033[0mEnable/disable ehtsh labels.\033[0m"
+      echo -e "\033[0m   -l  --labels <state> \033[1;37m| \033[0mEnable/disable labels.\033[0m"
       echo -e "\033[0m   -u  --update         \033[1;37m| \033[0mUpdate ehtools shell.\033[0m"
       echo -e "\033[0m   -c  --check-if-root  \033[1;37m| \033[0mCheck if user root.\033[0m"
       echo -e "\033[0m   -h  --help           \033[1;37m| \033[0mGive this help list.\033[0m"
