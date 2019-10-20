@@ -29,8 +29,6 @@
         B="\033[34m" #Blue
         C="\033[0m" #End
 
-printf '\033]2;Entynet Packager\a'
-
 if [[ "$1" = "--update" || "$1" = "-u" ]]
 then
 if [[ $EUID -ne 0 ]]
