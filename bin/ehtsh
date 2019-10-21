@@ -22,6 +22,24 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+if [[ -d ~/ehtsh ]]
+then
+sleep 0
+else
+{
+ASESR="$( timeout -s SIGTERM 40 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
+} &> /dev/null
+if [[ "$ASESR" != "" ]]
+then 
+cd ~
+{
+git clone https://github.com/entynetproject/ehtsh.git
+} &> /dev/null
+else
+sleep 0
+fi
+fi
+
 if [[ "$1" = "--help" || "$1" = "-h" ]]
 then
       echo -e
@@ -91,11 +109,13 @@ if [[ $2 = "" ]]
   sleep 1
   exit
   else
+  {
   cd ~/ehtsh
   mkdir .disabled
   mv ehtsh .disabled
   cp etc/ehtsh ~/ehtsh
   chmod +x ~/ehtsh/ehtsh
+  } &> /dev/null
   sleep 3
   echo -e "Success, labels disabled!"
   sleep 1
@@ -112,11 +132,13 @@ if [[ $2 = "" ]]
   sleep 1
   exit
   else
+  {
   cd ~/ehtsh
   rm ehtsh
   mv .disabled/ehtsh ~/ehtsh
   rm -rf .disabled
   chmod +x ~/ehtsh/ehtsh
+  } &> /dev/null
   sleep 3
   echo -e "Success, labels enabled!"
   sleep 1
