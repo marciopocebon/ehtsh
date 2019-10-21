@@ -83,7 +83,7 @@ if [[ $2 = "" ]]
   cd ~/ehtsh
   rm ehtsh
   mv .disabled/ehtsh ~/ehtsh
-  rm -r .disabled
+  rm -rf .disabled
   chmod +x ~/ehtsh/ehtsh
   sleep 3
   echo -e "Success, labels enabled!"
