@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-if [[ -d ~/epkg ]]
+if [[ -d ~/ehtsh ]]
 then
 sleep 0
 else
@@ -33,7 +33,7 @@ if [[ "$ASESR" != "" ]]
 then 
 cd ~
 {
-git clone https://github.com/entynetproject/epkg.git
+git clone https://github.com/entynetproject/ehtsh.git
 } &> /dev/null
 else
 sleep 0
@@ -82,11 +82,13 @@ if [[ $2 = "" ]]
   sleep 1
   exit
   else
+  {
   cd ~/ehtsh
   mkdir .disabled
   mv ehtsh .disabled
   cp etc/ehtsh ~/ehtsh
   chmod +x ~/ehtsh/ehtsh
+  } &> /dev/null
   sleep 3
   echo -e "Success, labels disabled!"
   sleep 1
@@ -103,11 +105,13 @@ if [[ $2 = "" ]]
   sleep 1
   exit
   else
+  {
   cd ~/ehtsh
   rm ehtsh
   mv .disabled/ehtsh ~/ehtsh
   rm -rf .disabled
   chmod +x ~/ehtsh/ehtsh
+  } &> /dev/null
   sleep 3
   echo -e "Success, labels enabled!"
   sleep 1
