@@ -1,0 +1,895 @@
+#!/bin/bash
+
+# MIT License
+
+# Copyright (C) 2019, Ehtools Team. All Rights Reserved.
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+if [[ -d ~/ehtsh ]]
+then
+sleep 0
+else
+{
+ASESR="$( timeout -s SIGTERM 40 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
+} &> /dev/null
+if [[ "$ASESR" != "" ]]
+then 
+cd ~
+{
+git clone https://github.com/entynetproject/ehtsh.git
+} &> /dev/null
+else
+sleep 0
+fi
+fi
+
+if [[ "$1" = "--help" || "$1" = "-h" ]]
+then
+      echo -e """
+      :::::::::: :::    ::: ::::::::::: ::::::::  :::    ::: 
+     :+:        :+:    :+:     :+:    :+:    :+: :+:    :+:  
+    +:+        +:+    +:+     +:+    +:+        +:+    +:+   
+   +#++:++#   +#++:++#++     +#+    +#++:++#++ +#++:++#++    
+  +#+        +#+    +#+     +#+           +#+ +#+    +#+     
+ #+#        #+#    #+#     #+#    #+#    #+# #+#    #+#      
+########## ###    ###     ###     ########  ###    ###
+"""    
+      echo -e "\033[0mUsage: ehtsh [OPTION...]\033[0m"
+      echo -e "\033[0mCopyright (C) 2019, Ehtools Team. All Rights Reserved.\033[0m"
+      echo -e
+      echo -e "\033[0m   -t  --theme <theme>  \033[1;37m| \033[0mChange ehtsh theme.\033[0m"
+      echo -e "\033[0m   -l  --labels <state> \033[1;37m| \033[0mEnable/disable labels.\033[0m"
+      echo -e "\033[0m   -u  --update         \033[1;37m| \033[0mUpdate ehtools shell.\033[0m"
+      echo -e "\033[0m   -c  --check-if-root  \033[1;37m| \033[0mCheck if user root.\033[0m"
+      echo -e "\033[0m   -h  --help           \033[1;37m| \033[0mGive this help list.\033[0m"
+      echo -e
+      echo -e "\033[0m   -t -l  --theme --list \033[1;37m| \033[0mShow all available themes.\033[0m"
+      echo -e "\033[0m   -t -c  --theme --calc \033[1;37m| \033[0mCalculate number of themes.\033[0m"
+      echo -e
+      exit
+
+elif [[ "$1" = "--update" || "$1" = "-u" ]]
+then
+if [[ $EUID -ne 0 ]]
+then
+sleep 1
+echo -e "\033[31mPermission denied!\033[0m"
+sleep 1
+exit
+fi
+sleep 1
+echo -e "\033[34mInstalling update...\033[0m"
+{
+cd ~
+cd ~/ehtsh
+chmod +x uninstall.sh
+./uninstall.sh
+cd ~
+git clone https://github.com/entynetproject/ehtsh.git
+cd ~/ehtsh
+chmod +x install.sh
+./install.sh
+cd ~
+} &> /dev/null
+echo -e "\033[32mSuccessfully updated...\033[0m"
+sleep 1
+exit
+
+elif [[ "$1" = "--labels" || "$1" = "-l" ]]
+then
+if [[ $2 = "" ]]
+  then
+  echo -e "Usage: ehtsh $1 <state>"
+  exit
+  fi  
+  if [[ "$2" = "disable" ]]
+  then
+  printf '\033]2;Disabling...\a'
+  if [[ -d ~/ehtsh/.disabled ]]
+  then
+  sleep 3
+  echo -e "Error, labels is already disabled!"
+  sleep 1
+  exit
+  else
+  {
+  cd ~/ehtsh
+  mkdir .disabled
+  mv ehtsh .disabled
+  cp etc/ehtsh ~/ehtsh
+  chmod +x ~/ehtsh/ehtsh
+  } &> /dev/null
+  sleep 3
+  echo -e "Success, labels disabled!"
+  sleep 1
+  exit
+  fi
+  fi
+  if [[ "$2" = "enable" ]]
+  then
+  printf '\033]2;Enabling...\a'
+  if [[ ! -d ~/ehtsh/.disabled ]]
+  then
+  sleep 3
+  echo -e "Error, labels is already enabled!"
+  sleep 1
+  exit
+  else
+  {
+  cd ~/ehtsh
+  rm ehtsh
+  mv .disabled/ehtsh ~/ehtsh
+  rm -rf .disabled
+  chmod +x ~/ehtsh/ehtsh
+  } &> /dev/null
+  sleep 3
+  echo -e "Success, labels enabled!"
+  sleep 1
+  exit
+  fi
+  fi
+  
+elif [[ "$1" = "--check-if-root" || "$1" = "-c" ]]
+then
+printf '\033]2;Checking...\a'
+if [[ $EUID -ne 0 ]]
+then
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+sleep 3
+echo -e ""$N"["$R"✗"$N"] "$R"Sorry, you are not a root!"$C""
+sleep 1 
+exit
+else
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+sleep 3
+echo -e ""$N"["$G"✔"$N"] "$G"Congratulations, you are a root!"$C""
+sleep 1
+exit
+fi
+fi
+
+
+WHO="$(whoami)"
+if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+  if [[ "$1" = "--theme" || "$1" = "-t" ]]
+  then
+  if [[ $2 = "" ]]
+  then
+  echo -e "Usage: ehtsh $1 [-c/--calc|-l/--list|-n/--no <theme>|<theme>]"
+  exit
+  fi    
+      if [[ "$2" = "ehtsh" ]]
+      then
+          while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+
+if [[ $EUID -ne 0 ]]
+then
+printf '\033]2;'$WHO'@ehtools:'$PWD'$\a'
+echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m$\033[0m"
+read -e -p $' ' EXEC
+else
+    printf '\033]2;'$WHO'@ehtools:'$PWD'#\a'
+    echo -n -e "\033[1;31m"$WHO"@ehtools\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
+    read -e -p $' ' EXEC
+    fi
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+          
+      elif [[ "$2" = "system" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;as system\a'
+    echo -n -e "as system:"
+    read -e -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+          
+      elif [[ "$2" = "eterm" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;'$WHO'\a'
+if [[ $EUID -ne 0 ]]
+then
+    echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
+    read -e -p $' ' EXEC
+    else
+    echo -n -e "\033[34meterm##$:"$PWD":\033[0m"
+    read -e -p $' ' EXEC
+    fi
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+          
+      elif [[ "$2" = "root" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;user:root in '$PWD'\a'
+    if [[ $EUID = 0 ]]
+    then
+    echo -n -e ""$N"["$G"✔"$N"]-\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
+    else
+    echo -n -e ""$N"["$R"✗"$N"]-\033[1;37m[\033[1;31mroot\033[1;37m]:\033[0m"
+    fi
+    read -e -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+          
+      elif [[ "$2" = "kali" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+if [[ $EUID -ne 0 ]]
+then
+printf '\033]2;'$WHO'@kali:'$PWD'$\a'
+    echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m$\033[0m"
+    read -e -p $' ' EXEC
+    else
+    printf '\033]2;'$WHO'@kali:'$PWD'#\a'
+    echo -n -e "\033[1;31m"$WHO"@kali\033[1;37m:\033[1;34m"$PWD"\033[1;37m#\033[0m"
+    read -e -p $' ' EXEC
+fi
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+          
+      elif [[ "$2" = "red" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+if [[ $EUID -ne 0 ]]
+then
+printf '\033]2;'$PWD'\a'
+    read -e -p $'\033[1;31m$\033[0m ' EXEC
+    else
+    printf '\033]2;'$PWD'\a'
+    read -e -p $'\033[1;31m#\033[0m ' EXEC
+    fi
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+          
+      elif [[ "$2" = "dos_fat" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;DOS_fat ~> '$PWD'\a'
+    echo -n -e "DOS_fat ~> "$PWD":"
+    read -e -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+    
+    elif [[ "$2" = "entynet" ]]
+      then
+      clear
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        S="\033[1;35m"
+        C="\033[0m" #End
+      echo -e ""$S"███████╗███╗   ██╗████████╗██╗   ██╗███╗   ██╗███████╗████████╗"
+      echo -e ""$S"██╔════╝████╗  ██║╚══██╔══╝╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝"
+      echo -e ""$S"█████╗  ██╔██╗ ██║   ██║    ╚████╔╝ ██╔██╗ ██║█████╗     ██║   "
+      echo -e ""$S"██╔══╝  ██║╚██╗██║   ██║     ╚██╔╝  ██║╚██╗██║██╔══╝     ██║   "
+      echo -e ""$S"███████╗██║ ╚████║   ██║      ██║   ██║ ╚████║███████╗   ██║   "
+      echo -e ""$S"╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝   "
+      echo -e ""$N"       "$S"***"$N" Welcome to Entynet | Version 2.0 (full) "$S"***"$N"        "
+      echo -e ""$N"             "$S"***"$N" Powered by Entynetproject "$S"***"$N"                  "
+      echo -e
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        S="\033[1;35m"
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;[461] Connection: Spoofed | Control Panel | Connected as '$WHO'\a'
+    
+    if [[ $EUID = 0 ]]
+    then
+    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"#\033[0m"
+    read -e -p $' ' EXEC
+    else
+    echo -n -e ""$S"["$WHO""$N"@"$S"entynet "$N""$PWD""$S"]"$N"$\033[0m"
+    read -e -p $' ' EXEC
+    fi
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+         
+      elif [[ "$2" = "c_disk" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;C:\'$PWD'\a'
+    echo -n -e "C:\'$PWD'>"
+    read -e -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+elif [[ "$2" = "alpine" ]]
+      then
+           while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;alpine('$PWD')\a'
+    echo -n -e ""$R"alpine"$N"(\033[4;31m"$PWD""$C""$N")"$B" ~"$R">"$C""
+    read -e -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+        
+      elif [[ "$2" = "--list" || "$2" = "-l" ]]
+      then
+      echo -e
+      echo -e "\033[0m   dos_fat \033[1;37m| \033[0mDOS cmd theme.\033[0m"
+      echo -e "\033[0m   c_disk  \033[1;37m| \033[0mWindows cmd theme.\033[0m"
+      echo -e "\033[0m   system  \033[1;37m| \033[0mOld terminal theme.\033[0m"
+      echo -e "\033[0m   ehtsh   \033[1;37m| \033[0mThe ehtsh default theme.\033[0m"
+      echo -e "\033[0m   root    \033[1;37m| \033[0mRoot user checker theme.\033[0m"
+      echo -e "\033[0m   red     \033[1;37m| \033[0mThe red theme.\033[0m"
+      echo -e "\033[0m   kali    \033[1;37m| \033[0mKali Linux theme.\033[0m"
+      echo -e "\033[0m   eterm   \033[1;37m| \033[0mElliot terminal theme.\033[0m"
+      echo -e "\033[0m   alpine  \033[1;37m| \033[0mThe macOS alpine theme.\033[0m"
+      echo -e "\033[0m   entynet \033[1;37m| \033[0mEntynet panel theme.\033[0m"
+      echo -e
+      
+      elif [[ "$2" = "--calc" || "$2" = "-c" ]]
+      then
+      printf '\033]2;Calculating...\a'
+      echo -e
+      function ProgressBarks {
+
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+
+                         
+        
+printf "\rCalculating (${_progress}%%)"
+
+}
+
+
+_start=1
+
+_end=100
+
+for number in $(seq ${_start} ${_end})
+do
+    sleep 0.1
+    ProgressBarks ${number} ${_end}
+done
+
+sleep 3
+echo -e
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+        echo -e
+echo -e "   Total "$N"|"$C" 10"$C""
+echo -e "   v1.0  "$N"|"$C"  8"$C""
+echo -e "   v1.2  "$N"|"$C"  9"$C""
+echo -e "   v1.3  "$N"|"$C" 10"$C""
+echo -e
+sleep 1
+      fi
+     
+else
+ while true
+    do
+        R="\033[1;31m" # Red
+        N="\033[1;37m" # White
+        G="\033[1;32m" # Green
+        O="\033[1;93m" # Orange
+        B="\033[1;34m" #Blue
+        C="\033[0m" #End
+            WHO="$( whoami )"
+            if [[ "$(pwd)" = $HOME ]]
+then
+PWD="~"
+else
+PWD="$(pwd)"
+fi
+
+
+printf '\033]2;ehtsh\a'
+    if [[ $EUID = 0 ]]
+    then
+    echo -n -e "ehtsh-1.3#"
+    else
+    echo -n -e "ehtsh-1.3$"
+    fi
+    read -e -p $' ' EXEC
+
+if [[ "$EXEC" = "ls" ]]
+then
+if [[ -d /System/Library/CoreServices/Finder.app ]]
+then
+ls -G
+else
+ls --color
+fi
+else
+if [[ "$EXEC" = "cd ~" ]]
+then
+cd
+else
+$EXEC
+fi
+fi
+        if [[ true ]]
+        then    
+            {
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        else
+            {
+            
+            echo "$EXEC" >> ~/.ehtsh_history
+            } &> /dev/null
+        fi
+    
+    done
+fi
