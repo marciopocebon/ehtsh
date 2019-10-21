@@ -25,7 +25,6 @@
 if [[ "$1" = "--help" || "$1" = "-h" ]]
 then
       echo -e
-      cd ~/ehtsh
       cat banner/banner.txt
       echo -e
       echo -e "\033[0mUsage: ehtsh [OPTION...]\033[0m"
