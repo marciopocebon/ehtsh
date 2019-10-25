@@ -38,4 +38,5 @@ fi
 rm /bin/ehtsh
 rm /usr/local/bin/ehtsh
 rm -r ~/ehtsh
+rm /data/data/com.termux/files/usr/bin/ehtsh
 } &> /dev/null
