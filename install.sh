@@ -42,6 +42,8 @@ cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
+cp ehtsh /data/data/com.termux/files/usr/bin
+chmod +x /data/data/com.termux/files/usr/bin/ehtsh
 } &> /dev/null
 cd ~/ehtsh
 else
@@ -53,6 +55,8 @@ cp ehtsh /bin
 cp ehtsh /usr/local/bin
 chmod +x /bin/ehtsh
 chmod +x /usr/local/bin/ehtsh
+cp ehtsh /data/data/com.termux/files/usr/bin
+chmod +x /data/data/com.termux/files/usr/bin/ehtsh
 } &> /dev/null
 cd ~/ehtsh
 fi
