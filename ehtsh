@@ -67,6 +67,22 @@ then
 
 elif [[ "$1" = "--update" || "$1" = "-u" ]]
 then
+if [[ -d /data/data/com.termux ]]
+then
+if [[ -f /data/data/com.termux/files/usr/bin/ehtsh ]]
+then
+UPD="true"
+else
+UPD="false"
+fi
+else
+if [[ -f /usr/local/bin/ehtsh ]]
+then
+UPD="true"
+else
+UPD="false"
+fi
+fi
 {
 ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
 } &> /dev/null
@@ -93,9 +109,14 @@ chmod +x uninstall.sh
 ./uninstall.sh
 cd ~
 git clone https://github.com/entynetproject/ehtsh.git
+if [[ "$UPD" != "true" ]]
+then
+sleep 0
+else
 cd ~/ehtsh
 chmod +x install.sh
 ./install.sh
+fi
 cd ~
 } &> /dev/null
 echo -e "\033[32mSuccessfully updated!\033[0m"
