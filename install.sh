@@ -36,6 +36,7 @@ fi
 
 if [[ -d ~/ehtsh ]]
 then
+sleep 3
 cd ~/ehtsh/bin
 {
 cp ehtsh /bin
@@ -47,6 +48,7 @@ chmod +x /data/data/com.termux/files/usr/bin/ehtsh
 } &> /dev/null
 cd ~/ehtsh
 else
+sleep 1
 cd ~
 {
 git clone https://github.com/entynetproject/ehtsh.git
